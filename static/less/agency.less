@@ -6,6 +6,7 @@
 body {
 	overflow-x: hidden;
 	.body-font;
+	background-color: @brand-background;
 }
 
 .text-muted {
@@ -52,15 +53,15 @@ h1, h2, h3, h4, h5, h6 {
 .img-centered {
 	margin: 0 auto;
 }
-
+/*
 .bg-light-gray {
 	background-color: @gray-lighter;
 }
 
 .bg-darkest-gray {
-	background-color: @gray-darkest;
+	background-color: @brand-secondary;
 }
-
+*/
 // Restyled Primary Buttons
 
 .btn-primary {
@@ -81,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 // Custom Navigation Bar
 
 .navbar-default {
-	background-color: @gray-darkest;
+	background-color: @brand-secondary;
 	border-color: transparent;
 	.navbar-brand {
 		color: @brand-primary;
@@ -153,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 		}
     }
     .navbar-default.navbar-shrink {
-    	background-color: @gray-darkest;
+    	background-color: @brand-secondary;
         padding: 10px 0;
 		.navbar-brand {
 	        font-size: 1.5em;
@@ -162,10 +163,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-	background-image: url('../img/header-bg.jpg');
-	background-repeat: none;
-	background-attachment: scroll;
-	background-position: center center;
+	background: linear-gradient(to top, @brand-background, transparent 60%),
+				url('../img/header-bg.jpg') no-repeat center;
 	.background-cover;
 	text-align: center;
 	color: white;
@@ -219,7 +218,7 @@ section {
     h2.section-heading {
 		font-size: 40px;
 		margin-top: 0;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
     }
     h3.section-subheading {
 		font-size: 16px;
@@ -229,6 +228,7 @@ section {
 		font-weight: 400;
 		margin-bottom: 75px;
     }
+
 }
 
 @media(min-width:768px) {
@@ -264,6 +264,8 @@ section {
                 transition: all ease 0.5s;
                 -webkit-transition: all ease 0.5s;
                 -moz-transition: all ease 0.5s;
+
+                
                 &:hover {
                     opacity: 1;
                 }
@@ -307,6 +309,10 @@ section {
     * {
         z-index: 2;
     }
+}
+
+#scopium_pic {
+    padding: 15%;
 }
 
 @media(min-width:767px) {
@@ -503,6 +509,10 @@ section {
 
 // Team Section
 
+#team {
+    background: linear-gradient(@brand-background, @brand-secondary);
+}
+
 .team-member {
 	text-align: center;
 	margin-bottom: 50px;
@@ -531,7 +541,7 @@ aside.clients {
 // Contact Section
 
 section#contact {
-	background-color: @gray-darkest;
+	background-color: @brand-secondary;
 	background-image: url('../img/map-image.png');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -605,7 +615,7 @@ ul.social-buttons {
 	li {
 		a {
 			display: block;
-			background-color: @gray-darkest;
+			background-color: @brand-secondary;
 			height: 40px;
 			width: 40px;
 			border-radius: 100%;
@@ -634,8 +644,8 @@ ul.social-buttons {
 
 .portfolio-modal {
 	.modal-content {
-	    border-radius: 10%;
-	    // used to be 0
+		background-color: #adeacc;
+	    border-radius: 0;
 	    background-clip: border-box;
 	    -webkit-box-shadow: none;
 	    box-shadow: none;
@@ -679,7 +689,7 @@ ul.social-buttons {
             height:75px;
             width:1px;
             margin-left:35px;
-            background-color:@gray-darkest;
+            background-color:@brand-secondary;
             transform: rotate(45deg);
             -ms-transform: rotate(45deg);
             /* IE 9 */
@@ -689,7 +699,7 @@ ul.social-buttons {
             .rl {
                 height:75px;
                 width:1px;
-                background-color:@gray-darkest;
+                background-color:@brand-secondary;
                 transform: rotate(90deg);
                 -ms-transform: rotate(90deg);
                 /* IE 9 */
@@ -735,8 +745,21 @@ body {
 	img {
 		border: 10px ridge @brand-primary;
 		box-shadow: 20px 20px 15px #888;
+		margin-bottom: 50px;
 	}
 	
+}
+
+@media(max-width:1200px) {
+	.about-pic {
+		img {
+			max-width: 50%;
+			margin-left: 25%;
+			margin-right: 25%;
+		}
+	
+	}
+
 }
 
 .about-bio {
@@ -747,4 +770,16 @@ body {
 		padding-right: 50px;
 	}
 	
+}
+
+// Skills Section
+
+.about-skills {
+	div {
+		&:hover {
+			border-radius: 10%;
+			box-shadow: 20px 20px 50px #888;
+			-webkit-transition: all ease 0.7s;
+		}
+	}
 }

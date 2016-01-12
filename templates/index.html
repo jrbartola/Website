@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
+{% block title %}Jesse Bartola{% endblock %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Agency - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="static/css/agency.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
+{% block body %}
 <body id="page-top" class="index">
 
     <!-- Navigation -->
@@ -50,7 +20,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse animsition" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -92,18 +62,18 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About Me</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="about-pic">
-                        <img src="static/img/facebookprof.jpg" class="img-responsive img-circle" alt="">
+                        <img src="static/img/facebookprof.jpg" id="prof_pic" class="img-responsive img-circle" alt="">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="about-bio">
-                        <p>My name is Jesse Bartola and I am an 18 years old. I am an aspiring software engineer currently attending the <a href="http://www.umass.edu/">University of Massachusetts, Amherst</a>. I grew up around computers, mainly because my father had a job in the field as a network administrator. Since then I have developed a passion for programming web and mobile applications...
+                        <p id="mybio">My name is Jesse Bartola and I am an 18 years old. I am an aspiring software engineer currently attending the <a href="http://www.umass.edu/">University of Massachusetts, Amherst</a>. I grew up around computers, mainly because my father had a job in the field as a network administrator. Since then I have developed a passion for programming web and mobile applications. I possess an unsual yearning for learning and will spend however long it takes to perfect every skill in my aresenal of knowledge.
                         </p>
                     </div>
                 </div>
@@ -159,7 +129,7 @@
                     <br>
                 </div>
             </div>
-            <div class="row text-center">
+            <div class="row text-center about-skills">
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -219,7 +189,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                        <img src="static/img/basicchat.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Basic Chat</h4>
@@ -233,7 +203,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/img/iphone_bg_scop.jpg" class="img-responsive" alt="">
+                        <img src="static/img/iphone_bg_scop.jpg" class="img-responsive" id="scopium_pic" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Scopium</h4>
@@ -295,7 +265,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Me</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Project inquiries, compliments, and greetings are all accepted!</h3>
                 </div>
             </div>
             <div class="row">
@@ -341,6 +311,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
+                        <li><a href="mailto:jrbartola@gmail.com"><i class="fa fa-envelope"></i></a>
+                        </li>
                         <li><a href="http://github.com/jrbartola"><i class="fa fa-github"></i></a>
                         </li>
                         <li><a href="https://www.facebook.com/jbartola"><i class="fa fa-facebook"></i></a>
@@ -351,7 +323,9 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="mailto:jrbartola@gmail.com">Email Me</a>
+                        <li>
+                        </li>
+                        <li>You are the th visitor!
                         </li>
                     </ul>
                 </div>
@@ -385,7 +359,7 @@
                             <ul class="list-inline">
                                 <li>Date: June 2015</li>
                             </ul>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
+                            <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
                         </div>
                     </div>
                 </div>
@@ -408,9 +382,9 @@
                         <div class="modal-body">
                             <h2>Basic Chat</h2>
                             <p class="item-intro text-muted">Portable chat messaging</p>
-                            <img class="img-responsive img-centered" src="static/img/portfolio/startup-framework-preview.png" alt="">
+                            <img class="img-responsive img-centered" src="static/img/basicchat.png" alt="">
                             <p>Basic Chat is a small project making good use of Node.js and MongoDB. It allows the user to send instant messages to other users that are logged in. The site also tracks analytics for each user that can be viewed on their profile. More features are coming soon!</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
+                            <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
                         </div>
                     </div>
                 </div>
@@ -434,10 +408,10 @@
                             <!-- Project Details Go Here -->
                             <h2>Scopium</h2>
                             <p class="item-intro text-muted">Award Winning iOS Application</p>
-                            <img class="img-responsive img-centered" src="static/img/portfolio/treehouse-preview.png" alt="">
+                            <img class="img-responsive img-centered" src="static/img/basicchat.png" alt="">
                             <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
                             <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
                         </div>
                     </div>
                 </div>
@@ -460,9 +434,18 @@
     <script src="static/js/jqBootstrapValidation.js"></script>
     <script src="static/js/contact_me.js"></script>
 
+    <!-- Waypoints Plugin -->
+    <script src="static/js/noframework.waypoints.min.js"></script>
+
+    <!-- Custom Waypoints -->
+    <script src="static/js/custom_waypoints.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="static/js/agency.js"></script>
 
+    
+
 </body>
+{% endblock %}
 
 </html>
