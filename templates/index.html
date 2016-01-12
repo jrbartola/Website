@@ -229,7 +229,7 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="static/img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
+                        <h4>Who</h4>
                         <p class="text-muted">Lead Designer</p>
                         
                     </div>
@@ -237,7 +237,7 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="static/img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
+                        <h4>Are</h4>
                         <p class="text-muted">Lead Marketer</p>
                         
                     </div>
@@ -245,7 +245,7 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="static/img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
+                        <h4>These people?!?!</h4>
                         <p class="text-muted">Lead Developer</p>
                         
                     </div>
@@ -275,18 +275,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required="" data-validation-required-message="Please enter your name." aria-invalid="false">
+                                    <input type="text" class="form-control" placeholder="Your Name *" name="name" id="name" required="" data-validation-required-message="Please enter your name." aria-invalid="false">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required="" data-validation-required-message="Please enter your email address." aria-invalid="false">
+                                    <input type="email" class="form-control" placeholder="Your Email *" name="email" id="email" required="" data-validation-required-message="Please enter your email address." aria-invalid="false">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Message *" id="message" required="" data-validation-required-message="Please enter a message." aria-invalid="false"></textarea>
+                                    <textarea class="form-control" placeholder="Message *" name="message" id="message" required="" data-validation-required-message="Please enter a message." aria-invalid="false"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -325,7 +325,7 @@
                     <ul class="list-inline quicklinks">
                         <li>
                         </li>
-                        <li>You are the th visitor!
+                        <li>You are the {{ visits }}th visitor!
                         </li>
                     </ul>
                 </div>
@@ -355,7 +355,7 @@
                             <img class="img-responsive img-centered" src="static/img/txtadvice.png" alt="">
                             <p>Ever second-think youself after putting on an outfit before you head out the door? Few people haven't, which is why I decided to become the lead platform developer of TxtAdvice. At any moment a professional stylist is ready to answer any question you might have about your current outfit. Send in a question or a picture and you'll have an answer in no time!</p>
                             <p>
-                                <strong>Want to try it out? </strong>Go ahead down to <a href="http://txtadvice.com/">txtadvice.com</a> and enter your phone number in the box!</p>
+                                <strong>Want to try it out? </strong> Go ahead down to <a href="http://txtadvice.com/">txtadvice.com</a> and enter your phone number in the box!</p>
                             <ul class="list-inline">
                                 <li>Date: June 2015</li>
                             </ul>
@@ -383,7 +383,7 @@
                             <h2>Basic Chat</h2>
                             <p class="item-intro text-muted">Portable chat messaging</p>
                             <img class="img-responsive img-centered" src="static/img/basicchat.png" alt="">
-                            <p>Basic Chat is a small project making good use of Node.js and MongoDB. It allows the user to send instant messages to other users that are logged in. The site also tracks analytics for each user that can be viewed on their profile. More features are coming soon!</p>
+                            <p>Basic Chat is a small project making good use of Node.js and MongoDB. It allows the user to send instant messages to other users that are logged in. The site also tracks analytics for each user that can be viewed on their profile. Check out the project on <a href="https://github.com/jrbartola/BasicChat">Github</a>! More features are coming soon.</p>
                             <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
                         </div>
                     </div>
@@ -407,10 +407,15 @@
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2>Scopium</h2>
-                            <p class="item-intro text-muted">Award Winning iOS Application</p>
-                            <img class="img-responsive img-centered" src="static/img/basicchat.png" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
+                            <p class="item-intro text-muted">Multiple-Sclerosis Monitoring Application</p>
+                            <div class="col-md-6">
+                                <img class="img-responsive img-centered" src="static/img/scopium2.jpg">
+                            </div>
+                            <div class="col-md-6">
+                                <img class="img-responsive img-centered" src="static/img/scopium1.jpg">
+                            </div>
+                            
+                            <p>Scopium is a project that is near and dear to my heart. <strong>See more:</strong> <a href="http://devpost.com/software/scopium">Devpost</a>.</p>
                             <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
                         </div>
                     </div>
@@ -432,7 +437,7 @@
 
     <!-- Contact Form JavaScript -->
     <script src="static/js/jqBootstrapValidation.js"></script>
-    <script src="static/js/contact_me.js"></script>
+   <!--  // <script src="static/js/contact_me.js"></script> -->
 
     <!-- Waypoints Plugin -->
     <script src="static/js/noframework.waypoints.min.js"></script>
