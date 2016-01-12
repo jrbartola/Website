@@ -1,10 +1,13 @@
 $(document).ready(function() {
+	
+
 	var allAbout = $(".about-skills").children();
 
 	// hide elements before animation shows
 	$('#prof_pic').css("visibility","hidden");
 	$('#mybio').css("visibility","hidden");
 	allAbout.css("visibility","hidden");
+	$(".slicker").css("visibility", "hidden");
 	$("ul.social-buttons").css("visibility", "hidden");
 
 	var about_waypoint = new Waypoint({
@@ -44,6 +47,22 @@ $(document).ready(function() {
     		$(this.element).addClass('animated slideInRight');
   		},
   		offset: 'bottom-in-view'
+	});
+
+	var portfolio_waypoint = new Waypoint({
+  		element: $(".slicker")[0],
+ 		handler: function() {
+ 			$(this.element).css("visibility","visible");
+ 			// Initialize Slick when visible
+			$('.slicker').slick({
+  				slidesToShow: 1,
+  				slidesToScroll: 1,
+  				autoplay: true,
+ 				autoplaySpeed: 6000,
+			});
+    		$(this.element).addClass('animated lightSpeedIn');
+  		},
+  		offset: '75%'
 	});
 
 	var social_waypoint = new Waypoint({
