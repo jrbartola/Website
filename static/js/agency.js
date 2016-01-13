@@ -50,52 +50,59 @@ $(document).ready(function() {
 
     $("#contactForm").submit(function(event) {
     	event.preventDefault();
-    	var name = $("input#name").val();
-        var email = $("input#email").val();
-        var phone = $("input#phone").val();
-        var message = $("textarea#message").val();
-        if (name != "" && email != "" && 
-        	phone != "" && message != "") {
+    	$('#success').html("<div class='alert alert-danger'>");
+        $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+        $('#success > .alert-danger').append("<strong>Our messaging system is currently not working. Please try again later.");
+        $('#success > .alert-danger').append('</div>');
+    	/* Uncomment for full database-integrated version of site */
 
-        	$.ajax({
-                url: "/msg",
-                type: "POST",
-                data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                },
-                cache: false,
-                success: function(name) {
-                    // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-            		$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-            		$('#success > .alert-success').append("<strong>Thank you, " + name + "! I have recieved you message and will read it shortly.");
-            		$('#success > .alert-success').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
-                    // Remove alert after 8 seconds
-                    setTimeout(function() {
-                    	$("#success").html("");
-                    }, 8000);
-                },
-                error: function(name) {
-                    // Fail message
-                    alert("Error error berror on terror");
-                    $("#success").html("");
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
-                },
-            });
-        } else {
-        	$('#success').html("<div class='alert alert-danger'>");
-            $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-            $('#success > .alert-danger').append("<strong>Please fill out all of the fields to send a message!");
-            $('#success > .alert-danger').append('</div>');
-        }
+    	// var name = $("input#name").val();
+     //    var email = $("input#email").val();
+     //    var phone = $("input#phone").val();
+     //    var message = $("textarea#message").val();
+     //    if (name != "" && email != "" && 
+     //    	phone != "" && message != "") {
+
+     //    	$.ajax({
+     //            url: "/msg",
+     //            type: "POST",
+     //            data: {
+     //                name: name,
+     //                phone: phone,
+     //                email: email,
+     //                message: message
+     //            },
+     //            cache: false,
+     //            success: function(name) {
+     //                // Success message
+     //                $('#success').html("<div class='alert alert-success'>");
+     //        		$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+     //                    .append("</button>");
+     //        		$('#success > .alert-success').append("<strong>Thank you, " + name + "! I have recieved you message and will read it shortly.");
+     //        		$('#success > .alert-success').append('</div>');
+     //                //clear all fields
+     //                $('#contactForm').trigger("reset");
+     //                // Remove alert after 8 seconds
+     //                setTimeout(function() {
+     //                	$("#success").html("");
+     //                }, 8000);
+     //            },
+     //            error: function(name) {
+     //                // Fail message
+     //                alert("Error error berror on terror");
+     //                $("#success").html("");
+     //                //clear all fields
+     //                $('#contactForm').trigger("reset");
+     //            },
+     //        });
+     //    } else {
+     //    	$('#success').html("<div class='alert alert-danger'>");
+     //        $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+     //                    .append("</button>");
+     //        $('#success > .alert-danger').append("<strong>Please fill out all of the fields to send a message!");
+     //        $('#success > .alert-danger').append('</div>');
+     //    }
     });
 
 });
