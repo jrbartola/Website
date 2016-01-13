@@ -50,11 +50,16 @@ $(document).ready(function() {
 
     $("#contactForm").submit(function(event) {
     	event.preventDefault();
-    	$('#success').html("<div class='alert alert-danger'>");
-        $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-        $('#success > .alert-danger').append("<strong>Our messaging system is currently not working. Please try again later.");
-        $('#success > .alert-danger').append('</div>');
+    	swal({title: "Whoops!",
+    	    text: "Our messaging system is currently under maintenance." +
+    	    " Please try again later.", 
+    	    type: "error", 
+    	    confirmButtonText: "Got it!" });
+    	// $('#success').html("<div class='alert alert-danger'>");
+     //    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+     //                    .append("</button>");
+     //    $('#success > .alert-danger').append("<strong>Our messaging system is currently not working. Please try again later.");
+     //    $('#success > .alert-danger').append('</div>');
     	/* Uncomment for full database-integrated version of site */
 
     	// var name = $("input#name").val();
