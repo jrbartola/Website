@@ -2,3 +2,7 @@
 Thumbs.db
 # Useless directories
 .idea/
+# Unused css/less
+static/css/agency_original.css
+static/css/timeline.css
+static/less/timeline.less
