@@ -24,6 +24,9 @@ $(document).ready(function() {
 	    target: '.navbar-fixed-top'
 	})
 
+	// Hide the error message for the message system
+	$('#success').hide();
+
 	// Closes the Responsive Menu on Menu Item Click
 	$('.navbar-collapse ul li a').click(function() {
 	    $('.navbar-toggle:visible').click();
@@ -48,66 +51,82 @@ $(document).ready(function() {
         });
     });
 
+    $("g[data-order]").on("click", function() {
+    	$("#piediv").children().hide().removeClass("animate fadeIn");
+    	var lang = $(this).attr('data-order');
+    	switch (lang) {
+    		case '0': $("#web").fadeIn(1000); break;
+    		case '1': $("#python").fadeIn(1000); break;
+    		case '2': $("#java").fadeIn(1000); break;
+    		case '3': $("#swift").fadeIn(1000); break;
+    		case '4': $("#scala").fadeIn(1000); break;
+    		default: console.log('Something went wrong');
+    	}
+    });
+
     $("#contactForm").submit(function(event) {
     	event.preventDefault();
-    	swal({title: "Whoops!",
-    	    text: "Our messaging system is currently under maintenance." +
-    	    " Please try again later.", 
-    	    type: "error", 
-    	    confirmButtonText: "Got it!" });
-    	// $('#success').html("<div class='alert alert-danger'>");
-     //    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-     //                    .append("</button>");
-     //    $('#success > .alert-danger').append("<strong>Our messaging system is currently not working. Please try again later.");
-     //    $('#success > .alert-danger').append('</div>');
+    	// swal({title: "Whoops!",
+    	//     text: "Our messaging system is currently under maintenance." +
+    	//     " Please try again later.", 
+    	//     type: "error", 
+    	//     confirmButtonText: "Got it!" });
+    	
     	/* Uncomment for full database-integrated version of site */
 
-    	// var name = $("input#name").val();
-     //    var email = $("input#email").val();
-     //    var phone = $("input#phone").val();
-     //    var message = $("textarea#message").val();
-     //    if (name != "" && email != "" && 
-     //    	phone != "" && message != "") {
+    	var name = $("input#name").val();
+        var email = $("input#email").val();
+        var message = $("textarea#message").val();
+        if (name != "" && email != "" && 
+        	message != "") {
 
-     //    	$.ajax({
-     //            url: "/msg",
-     //            type: "POST",
-     //            data: {
-     //                name: name,
-     //                phone: phone,
-     //                email: email,
-     //                message: message
-     //            },
-     //            cache: false,
-     //            success: function(name) {
-     //                // Success message
-     //                $('#success').html("<div class='alert alert-success'>");
-     //        		$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-     //                    .append("</button>");
-     //        		$('#success > .alert-success').append("<strong>Thank you, " + name + "! I have recieved you message and will read it shortly.");
-     //        		$('#success > .alert-success').append('</div>');
-     //                //clear all fields
-     //                $('#contactForm').trigger("reset");
-     //                // Remove alert after 8 seconds
-     //                setTimeout(function() {
-     //                	$("#success").html("");
-     //                }, 8000);
-     //            },
-     //            error: function(name) {
-     //                // Fail message
-     //                alert("Error error berror on terror");
-     //                $("#success").html("");
-     //                //clear all fields
-     //                $('#contactForm').trigger("reset");
-     //            },
-     //        });
-     //    } else {
-     //    	$('#success').html("<div class='alert alert-danger'>");
-     //        $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-     //                    .append("</button>");
-     //        $('#success > .alert-danger').append("<strong>Please fill out all of the fields to send a message!");
-     //        $('#success > .alert-danger').append('</div>');
-     //    }
+        	$.ajax({
+                url: "/msg",
+                type: "POST",
+                data: {
+                    name: name,
+                    email: email,
+                    message: message
+                },
+                cache: false,
+                success: function(name) {
+             
+            		swal({title: "Thank you!",
+    	    			text: "I have recieved your message and " +
+    	    			"will get back to you shortly.", 
+    	    			type: "success", 
+    	    			confirmButtonText: "Got it" });
+                    //clear all fields
+                    $('#contactForm').trigger("reset");
+                    // Remove alert after 8 seconds
+                    $('#contactForm').find('button').prop("disabled",true);
+                    setTimeout(function() {
+                    	$('#contactForm').find('button').prop("disabled",false);
+                    }, 60000);
+                },
+                error: function(name) {
+                    // Fail message
+                    swal({title: "Whoops!",
+    	    			text: "Something went wrong here," +
+    	    			" please try again later.", 
+    	    			type: "error", 
+    	    			confirmButtonText: "Okay" });
+                    $("#success").html("");
+                    //clear all fields
+                    $('#contactForm').trigger("reset");
+                },
+            });
+        } else {
+        	// $('#success').html("<div class='alert alert-danger'>");
+         //    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+         //                .append("</button>");
+         //    $('#success > .alert-danger').append("<strong>Please fill out all of the fields to send a message!");
+         //    $('#success > .alert-danger').append('</div>');
+            $('#success').fadeIn(1000);
+            setTimeout(function() { 
+            	$('#success').hide();
+            }, 6000);
+        }
     });
 
 });

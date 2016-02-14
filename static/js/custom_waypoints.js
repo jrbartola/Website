@@ -8,6 +8,7 @@ $(document).ready(function() {
 	$('#mybio').css("visibility","hidden");
 	allAbout.css("visibility","hidden");
 	$(".slicker").css("visibility", "hidden");
+  $("#piechart").css("visibility", "hidden");
 	$("ul.social-buttons").css("visibility", "hidden");
 
 	var about_waypoint = new Waypoint({
@@ -64,6 +65,15 @@ $(document).ready(function() {
   		},
   		offset: '75%'
 	});
+
+  // var piechart_waypoint = new Waypoint({
+  //     element: $("#piechart"),
+  //   handler: function() {
+  //     $(this.element).css("visibility","visible");
+  //       $(this.element).addClass('animated zoomIn');
+  //     },
+  //     offset: 'bottom-in-view'
+  // });
 
 	var social_waypoint = new Waypoint({
   		element: $("ul.social-buttons")[0],

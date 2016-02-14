@@ -10,7 +10,7 @@ body {
 }
 
 .text-muted {
-	color: @gray;
+	color: @gray; 
 }
 
 .text-primary {
@@ -224,7 +224,7 @@ section {
     }
     h3.section-subheading {
 		font-size: 16px;
-		.serif-font;
+		.body-font;
 		text-transform: none;
 		font-style: italic;
 		font-weight: 400;
@@ -326,9 +326,9 @@ section {
 }
 
 
-// Team Section
+// SkillSet Section
 
-#team {
+#skillset {
     background: linear-gradient(@brand-background, @brand-secondary);
 }
 
@@ -348,6 +348,61 @@ section {
 		margin-top: 0;
 	}
 }
+
+// Pie Chart
+
+.chart {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+}
+
+.pieTip {
+  position: absolute;
+  float: left;
+  min-width: 30px;
+  max-width: 300px;
+  padding: 5px 18px 6px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.97);
+  color: #444;
+  font-size: 19px;
+  text-shadow: 0 1px 0 #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: .06em;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.5);
+  -webkit-transform: all .3s;
+     -moz-transform: all .3s;
+      -ms-transform: all .3s;
+       -o-transform: all .3s;
+          transform: all .3s;
+  pointer-events: none;
+}
+.pieTip:after {
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      content: "";
+      height: 0;
+      margin: 0 0 0 -6px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 6px solid rgba(255,255,255,.95);
+      line-height: 0;
+}
+.chart path { cursor: pointer; }
+
+//.pie {
+//  margin: 0 auto;
+//  width: 300px; height: 300px;
+//  border-radius: 50%;
+//  background: conic-gradient(#655 40%, yellowgreen 0);
+//}
 
 // Clients Aside
 

@@ -5,6 +5,7 @@
 {% block body %}
 <body id="page-top" class="index">
 
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -73,7 +74,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="about-bio">
-                        <p id="mybio">My name is Jesse Bartola and I am an 18 years old. I am an aspiring software engineer currently attending the <a href="http://www.umass.edu/">University of Massachusetts, Amherst</a>. I grew up around computers, mainly because my father had a job in the field as a network administrator. Since then I have developed a passion for programming web and mobile applications. I possess an unsual yearning for learning and will spend however long it takes to perfect every skill in my aresenal of knowledge.
+                        <p id="mybio">My name is Jesse Bartola and I am an 18 years old. I am an aspiring software engineer currently attending the <a href="http://www.umass.edu/">University of Massachusetts, Amherst</a>. I grew up around computers, and played many games as a child. Since then I have developed a passion for programming web and mobile applications. I possess an unsual yearning for learning and will spend however long it takes to perfect every skill in my aresenal of knowledge.
                         </p>
                     </div>
                 </div>
@@ -216,16 +217,32 @@
 
     
 
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <!-- SkillSet Section -->
+    <section id="skillset" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Skill Set</h2>
-                    <h3 class="section-subheading text-muted">----------------</h3>
+                    
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-4">
+                    <div id="pieChart" class="chart">
+                    </div>
+                </div>
+                <div id="piediv" class="col-sm-8">
+                    <p id="pietext" class="large text-muted">Throughout my years of programming I have picked up several languages which I believe are essential to creating projects of any kind.</p>
+                    <p id="web" style="display:none;" class="large text-muted">Web development is my most proficient area of programming. From jQuery to Sass, I have learned how to craft websites to perfection through my honed skills.</p>
+                    <p id="python" style="display:none;" class="large text-muted">I am quite experienced with the language of Python and have created many websites and applications using Flask.</p>
+                    <p id="java" style="display:none;" class="large text-muted">Java was one of the first programming languages I ever learned. Although not my favorite, I have written my fair share of algorithmic programming and desktop applications in Java.</p>
+                    <p id="swift" style="display:none;" class="large text-muted">iPhone application devlopment is at the forefront of today's society. Whatever you need to get done, there's an app for that.</p>
+                    <p id="scala" style="display:none;" class="large text-muted">The introduction to functional programming with Scala has allowed me to explore the in-depth capabilities that programming really has to offer to the world.</p>
+                    
+                </div>
+            </div>
+            <br/>
+            <!-- <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="static/img/team/1.jpg" class="img-responsive img-circle" alt="">
@@ -250,12 +267,12 @@
                         
                     </div>
                 </div>
-            </div>
-            <div class="row">
+            </div> -->
+            <!-- <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     
@@ -292,7 +309,12 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
-                                <div id="success"></div>
+                                <div id="success">
+                                    <div class="alert alert-danger">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <strong>Please fill out all of the fields to send a message!</strong>
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-xl">Send Message</button>
                             </div>
                         </div>
@@ -453,6 +475,9 @@
 
     <!-- Custom Waypoints -->
     <script src="static/js/custom_waypoints.js"></script>
+
+    <!-- PieChart JavaScript -->
+    <script src="static/js/piechart.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="static/js/agency.js"></script>
