@@ -4,7 +4,7 @@
 
 {% block body %}
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -14,12 +14,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Jesse Bartola</a>
+                <a class="navbar-brand page-scroll" href="/">Jesse Bartola</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
+                <ul class="nav navbar-nav navbar-right">
                 	<li>
                         <a href="#refresh">Refresh</a>
                     </li>
@@ -35,4 +35,96 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <section id="mail">
+    	<div class="container">
+    		<div id="inbox" class="col-md-6">
+    			<h1 style="text-align:center;">Inbox</h1>
+    			
+    			<div class="row">
+    				<div class="col-md-6">
+    					<button id="recent" data-switch="oldest" type="button" class="btn btn-primary"><i class="fa fa-caret-up"></i> Oldest</button>
+    				    
+    				</div>
+	    			<div class="col-md-6">
+	    				<button type="button" class="btn btn-primary pull-right"><i class="fa fa-refresh"></i> Refresh</button>
+	    			</div>
+    			</div>
+    			
+    			<br/>
+    			<table style="table-layout:fixed;" class="table">
+    				<thead>
+    					<tr style="text-align:center;font-weight:bold;">
+    						<th>Date</th>
+    						<th>Email</th>
+    						<th>Message</th>
+    					</tr>
+    				</thead>
+    				{% for msg in messages %}
+    				{% if msg.read == false %}
+    				<tr style="background-color: #36f;" data-read="{{ msg.read }}" data-id="{{ msg.id }}" data-name="{{ msg.name }}">
+    					<th>{{ msg.time }}</th>
+    					<td style="overflow-x:scroll;">{{ msg.email }}</td>
+    					<td style="overflow-x:scroll;">{{ msg.message }}</td>
+    				</tr>
+    				{% else %}
+    				<tr data-id="{{ msg.id }}" data-read="{{ msg.read }}" data-name="{{ msg.name }}">
+    					<th>{{ msg.time }}</th>
+    					<td style="overflow-x:scroll;">{{ msg.email }}</td>
+    					<td style="overflow-x:scroll;">{{ msg.message }}</td>
+    				</tr>
+    				{% endif %}
+    				{% endfor %}
+    				<!-- <tr>
+    					<th>10:59 PM</th>
+    					<td>jsmith@gmail.com</td>
+    					<td>Hi! Just checking up to see how you were doing. Hope all is well</td>
+    				</tr>
+    				<tr>
+    					<th>8:12 PM</th>
+    					<td>hole@yahoo.com</td>
+    					<td>What's up? Was seeing if you wanted to work on a project together late. Keep me posted dude!</td>
+    				</tr>
+    				<tr>
+    					<th>5:32 PM</th>
+    					<td>kwest@weezy.org</td>
+    					<td>Whatdup sons</td>
+    				</tr> -->
+    			</table>
+    		</div>
+    		<div class="col-md-6">
+    			<h2 style="text-align:center;">Compose</h2>
+    			<br/>
+    			<textarea id="curmsg" data-selected="nil" class="form-control" disabled style="resize:none;" placeholder="Selected messages will appear here" rows="5"></textarea>
+    			<br/>
+    			<textarea id="response" class="form-control" style="resize:none;" placeholder="Type a response..." rows="8"></textarea>
+    			<br/>
+    			<div class="row">
+    				<div class="col-md-6">
+    					<button id="removemsg" type="button" class="btn btn-primary pull-left"><i class="fa fa-trash"></i> Delete</button>
+    				</div>
+    				
+    				<div class="col-md-6">
+                        <button id="sendmsg" type="button" class="btn btn-primary pull-right"><i class="fa fa-envelope"></i> Send</button>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <!-- SweetAlert Plugin -->
+    <script src="static/js/sweetalert.min.js"></script>
+
+    <!-- Mailbox JavaScript -->
+    <script src="static/js/mailbox.js"></script>
+
+
 </body>
+
+{% endblock %}

@@ -659,3 +659,33 @@ body {
 		}
 	}
 }
+
+// Mailbox
+
+#inbox {
+	border-left: 15px solid @brand-secondary;
+	border-right: 15px solid @brand-secondary;
+	height: 600px;
+	overflow-y: scroll;
+
+	& .row {
+		padding-top: 15px;
+	}
+
+	table {
+		tr {
+			&:hover {
+				cursor: pointer;
+				background-color: darken(@brand-background, 5%);
+			}
+		}
+	}
+}
+
+#removemsg {
+	
+	&:hover {
+		border-color: darkred;
+		background-color: darkred;
+	}
+}
