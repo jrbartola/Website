@@ -51,7 +51,7 @@ $(document).ready(function() {
         });
     });
 
-    $("g[data-order]").on("click", function() {
+    $(document).on("click", "g[data-order]", function() {
     	$("#piediv").children().hide().removeClass("animate fadeIn");
     	var lang = $(this).attr('data-order');
     	switch (lang) {

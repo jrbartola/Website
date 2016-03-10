@@ -1,4 +1,14 @@
-$(function(){
+// $(function(){
+//   $("#pieChart").drawPieChart([
+//     { title: "Javascript/HTML/CSS", value: 33, color: "#2C3E50" },
+//     { title: "Python", value:  24, color: "#018ab6" },
+//     { title: "Java", value : 23, color: "#fff100" },
+//     { title: "Swift", value:  12, color: "#fe4400" },
+//     { title: "Scala", value : 8, color: "#D7DADB" }
+//   ]);
+// });
+
+function drawPie() {
   $("#pieChart").drawPieChart([
     { title: "Javascript/HTML/CSS", value: 33, color: "#2C3E50" },
     { title: "Python", value:  24, color: "#018ab6" },
@@ -6,7 +16,7 @@ $(function(){
     { title: "Swift", value:  12, color: "#fe4400" },
     { title: "Scala", value : 8, color: "#D7DADB" }
   ]);
-});
+}
 
 /*!
  * jquery.drawPieChart.js
@@ -17,7 +27,7 @@ $(function(){
  * https://github.com/githiro/drawPieChart
  * Released under the MIT license.
  */
-;(function($, undefined) {
+(function($, undefined) {
   $.fn.drawPieChart = function(data, options) {
     var $this = this,
       W = $this.width(),
