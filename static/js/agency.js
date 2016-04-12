@@ -1,12 +1,9 @@
-/*!
- * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+/* http://www.jessebartola.com
+ * 
+ * 
+ * Copyright Jesse Bartola 2016
  */
 
-// Initialize Parse
-//Parse.initialize("Si6Nq1yFqTGBXz9ZkwvKTPpSuc03yjloNGnQUT7A", "lqhtowSejqGuDehuBI1pciDCKeS3HSkYwvndkcyw");
-//$(".animsition").animsition();
 $(document).ready(function() {
 	// jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {
@@ -58,9 +55,9 @@ $(document).ready(function() {
     		case '0': $("#web").fadeIn(1000); break;
     		case '1': $("#python").fadeIn(1000); break;
     		case '2': $("#java").fadeIn(1000); break;
-    		case '3': $("#swift").fadeIn(1000); break;
-    		case '4': $("#scala").fadeIn(1000); break;
-    		default: console.log('Something went wrong');
+    		case '3': $("#scala").fadeIn(1000); break;
+    		case '4': $("#swift").fadeIn(1000); break;
+    		default: console.error('Something went wrong');
     	}
     });
 
