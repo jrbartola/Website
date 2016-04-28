@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var allAbout = $(".about-skills").children();
 
 	// Hide elements before animation shows
-	$('#prof_pic').css("visibility","hidden");
+	$('.about-pic').css("visibility","hidden");
 	$('#mybio').css("visibility","hidden");
 	allAbout.css("visibility","hidden");
 	$(".slicker").css("visibility", "hidden");
@@ -14,9 +14,9 @@ $(document).ready(function() {
 	var about_waypoint = new Waypoint({
   	element: document.getElementById('prof_pic'),
  		handler: function() {
- 			$('#prof_pic').css("visibility","visible");
+ 			$('.about-pic').css("visibility","visible");
 			$('#mybio').css("visibility","visible");
-    	$('#prof_pic').addClass('animated bounceInLeft');
+    	$('.about-pic').addClass('animated bounceInLeft');
     	$('#mybio').addClass('animated bounceInRight');
 
       this.destroy();
