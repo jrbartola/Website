@@ -53,15 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 .img-centered {
 	margin: 0 auto;
 }
-/*
-.bg-light-gray {
-	background-color: @gray-lighter;
-}
 
-.bg-darkest-gray {
-	background-color: @brand-secondary;
-}
-*/
 // Restyled Primary Buttons
 
 .btn-primary {
@@ -238,9 +230,77 @@ section {
 
 }
 
-@media(min-width:768px) {
-	
+// About Me Section
+
+// Flexbox layout
+#aboutparent {
+	display: flex;
+	flex-direction: column;
 }
+
+.about-pic {
+	flex: 1;
+
+	img {
+		border: 10px ridge @brand-primary;
+		box-shadow: 10px 10px 15px #222;
+		margin-bottom: 50px;
+		max-width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+}
+
+.about-bio {
+	flex: 2;
+	p {
+		font-size: 1.6rem;
+		text-align: justify;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media(min-width:768px) {
+    #aboutparent {
+    	flex-direction: row;
+    }
+
+	.about-pic {
+		img {
+			max-width: 100%;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+	
+	}
+
+	.about-bio {
+	    p {
+	        font-size: 1.9rem;
+	        margin-top: 56px;
+	        padding-left: 50px;
+	        padding-right: 50px;
+	    }
+	}
+
+}
+
+
+// Skills Section
+
+.about-skills {
+	div {
+		&:hover {
+			cursor: pointer;
+			border-radius: 5px;
+			box-shadow: 3px 3px 5px #222;
+			-webkit-transition: all ease 0.7s;
+		}
+	}
+}
+
+
 
 // Services Section
 
@@ -337,13 +397,52 @@ section {
 
 // Pie Chart
 
+
+// Let's initialize a flexbox layout for this section
+#pieparent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+// Div with text descriptions of the languages within the pie chart
+#piediv {
+  flex: 2;
+  margin: 40px;
+}
+
 .chart {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 50%;
-  left: 50%;
+  width: 250px;
+  height: 250px;
+  svg {
+    width: inherit;
+    height: inherit;
+  }
+  
   margin: 0 auto;
+  flex: 1;
+}
+
+// Flex media query
+@media(min-width:768px) {
+  #pieparent {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  #piediv {
+    margin: 0px;
+  }
+
+  .chart {
+    width: 300px;
+    height: 300px;
+
+    svg {
+      width: inherit;
+      height: inherit;
+    }
+  }
 }
 
 .pieTip {
@@ -369,6 +468,7 @@ section {
           transform: all .3s;
   pointer-events: none;
 }
+
 .pieTip:after {
       position: absolute;
       left: 50%;
@@ -600,51 +700,6 @@ body {
     webkit-tap-highlight-color: @brand-primary;
 }
 
-// About Me Section
-
-.about-pic {
-	img {
-		border: 10px ridge @brand-primary;
-		box-shadow: 10px 10px 15px #222;
-		margin-bottom: 50px;
-	}
-	
-}
-
-@media(max-width:1200px) {
-	.about-pic {
-		img {
-			max-width: 50%;
-			margin-left: 25%;
-			margin-right: 25%;
-		}
-	
-	}
-
-}
-
-.about-bio {
-	p {
-		font-size: 2rem;
-		text-align: justify;
-		padding-left: 50px;
-		padding-right: 50px;
-	}
-	
-}
-
-// Skills Section
-
-.about-skills {
-	div {
-		&:hover {
-			cursor: pointer;
-			border-radius: 5px;
-			box-shadow: 3px 3px 5px #222;
-			-webkit-transition: all ease 0.7s;
-		}
-	}
-}
 
 // Mailbox
 
