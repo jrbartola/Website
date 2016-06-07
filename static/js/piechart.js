@@ -35,7 +35,7 @@ function drawPie() {
         segmentStrokeWidth : 1,
         baseColor: "#fff",
         baseOffset: 15,
-        edgeOffset: 30,//offset from edge of $this
+        edgeOffset: 0,//30,//offset from edge of $this
         pieSegmentGroupClass: "pieSegmentGroup",
         pieSegmentClass: "pieSegment",
         lightPiesOffset: 12,//lighten pie's width
@@ -87,7 +87,7 @@ function drawPie() {
       var $base = $(base).appendTo($wrapper);
       base.setAttribute("cx", centerX);
       base.setAttribute("cy", centerY);
-      base.setAttribute("r", pieRadius+settings.baseOffset);
+      base.setAttribute("r",pieRadius+settings.baseOffset);
       base.setAttribute("fill", settings.baseColor);
     }();
 
