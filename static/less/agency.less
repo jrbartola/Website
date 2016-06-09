@@ -290,17 +290,36 @@ section {
 // Skills Section
 
 .about-skills {
-	div {
+	perspective: 600px;
+}
+
+.skill {
+	.skill-icon {
+		z-index: 100;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+		-webkit-transition: transform 400ms cubic-bezier(.54,-0.36,.77,1.71);
+		transition: transform 400ms cubic-bezier(.54,-0.36,.77,1.71);
+
+		&:hover {
+			//cursor: pointer;
+			//transform: rotate3d(0,1,0,180deg);
+			
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	.skill-desc {
 		p {
 			text-align: justify;
 		}
-		&:hover {
-			cursor: pointer;
-			border-radius: 5px;
-			box-shadow: 3px 3px 5px #222;
-			-webkit-transition: all ease 0.7s;
-		}
+
+		//transform: rotate3d(0,1,0,180deg);
 	}
+
 }
 
 

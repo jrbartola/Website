@@ -6,7 +6,7 @@ $(document).ready(function() {
 	// Hide elements before animation shows
 	$('.about-pic').css("visibility","hidden");
 	$('#mybio').css("visibility","hidden");
-	allAbout.css("visibility","hidden");
+	//allAbout.css("visibility","hidden");
 	$(".slicker").css("visibility", "hidden");
   
 	$("ul.social-buttons").css("visibility", "hidden");
@@ -82,7 +82,7 @@ $(document).ready(function() {
       
       this.destroy();
     },
-    offset: 'bottom-in-view'
+    offset: '75%'
   });
 
 	var social_waypoint = new Waypoint({
