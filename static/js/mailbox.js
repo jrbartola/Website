@@ -1,5 +1,9 @@
 $(document).ready(function() {
-	$("tr").on('click', function() {
+	// Initialize tablesorter for visitors table
+	// Sort by first column in descending order
+	$('table.visitors-table').tablesorter({sortList: [[0,1]]});
+
+	$("tr.inbox-row").on('click', function() {
 		if ($(this).attr("data-read") == "False") {
 			$(this).css("background-color", "#39f");
 			var objid = $(this).attr("data-id");
@@ -40,7 +44,7 @@ $(document).ready(function() {
 			$(this).html('<i class="fa fa-caret-up"></i> Oldest');
 			$(this).attr("data-switch", "oldest");
 
-			$("tbody").each(function(elem,index){
+			$("tbody.inbox-table").each(function(elem,index){
 		    	var arr = $.makeArray($("tr",this).detach());
 		        arr.reverse();
 		        $(this).append(arr);
@@ -48,7 +52,7 @@ $(document).ready(function() {
 		} else {
 			$(this).html('<i class="fa fa-caret-down"></i> Most Recent');
 			$(this).attr("data-switch", "recent");
-			$("tbody").each(function(elem,index){
+			$("tbody.inbox-table").each(function(elem,index){
 		    	var arr = $.makeArray($("tr",this).detach());
 		        arr.reverse();
 		        $(this).append(arr);
@@ -120,6 +124,31 @@ $(document).ready(function() {
 	            },
 	        });
 		}
+	});
+
+	$('.visitor').on('click', function() {
+		// Set the caret to be facing the appropriate direction
+		
+
+		if ($(this).hasClass('headerSortUp')) {
+			$(this).find('span').attr('class','caret caret-upside');
+		} else if ($(this).hasClass('headerSortDown')) {
+			$(this).find('span').attr('class', 'caret');
+		}
+		// Keep track of which filter is being used so we can apply span carets
+		var prevFilter = $('table.visitors-table').attr('data-filter');
+		var id_ = $(this).attr('id');
+		// Remove caret from previous filter if not the same
+		if (prevFilter != id_) {
+			//console.log(prevFilter + " is not equal to " + id_)
+			$('th.visitor#' + prevFilter).find('span').attr('class','none');
+			$(this).find('span').attr('class','caret caret-upside');
+		}
+			
+
+		// Set new filter
+		$('table.visitors-table').attr('data-filter', id_);
+		
 	});
 });
 

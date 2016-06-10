@@ -38,44 +38,47 @@
 
     <section id="mail">
     	<div class="container">
-    		<div id="inbox" class="col-md-6">
+    		<div class="col-md-6 inbox">
     			<h1 style="text-align:center;">Inbox</h1>
-    			
-    			<div class="row">
-    				<div class="col-md-6">
-    					<button id="recent" data-switch="oldest" type="button" class="btn btn-primary"><i class="fa fa-caret-up"></i> Oldest</button>
-    				    
-    				</div>
-	    			<div class="col-md-6">
-	    				<button type="button" class="btn btn-primary pull-right"><i class="fa fa-refresh"></i> Refresh</button>
-	    			</div>
-    			</div>
-    			
+                <div class="flex">
+                    <div class="" style="margin-right:auto;">
+                        <button id="recent" data-switch="oldest" type="button" class="btn btn-primary"><i class="fa fa-caret-up"></i> Oldest</button>
+                        
+                    </div>
+                    <div class="">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-refresh"></i> Refresh</button>
+                    </div>
+                </div>
     			<br/>
-    			<table style="table-layout:fixed;" class="table">
-    				<thead>
-    					<tr style="text-align:center;font-weight:bold;">
-    						<th>Date</th>
-    						<th>Email</th>
-    						<th>Message</th>
-    					</tr>
-    				</thead>
-    				{% for msg in messages %}
-    				{% if msg.read == false %}
-    				<tr style="background-color: #36f;" data-read="{{ msg.read }}" data-id="{{ msg.id }}" data-name="{{ msg.name }}">
-    					<th>{{ msg.time }}</th>
-    					<td style="overflow-x:scroll;">{{ msg.email }}</td>
-    					<td style="overflow-x:scroll;">{{ msg.message }}</td>
-    				</tr>
-    				{% else %}
-    				<tr data-id="{{ msg.id }}" data-read="{{ msg.read }}" data-name="{{ msg.name }}">
-    					<th>{{ msg.time }}</th>
-    					<td style="overflow-x:scroll;">{{ msg.email }}</td>
-    					<td style="overflow-x:scroll;">{{ msg.message }}</td>
-    				</tr>
-    				{% endif %}
-    				{% endfor %}
-    			</table>
+                <div class="table-holder">
+                    <table style="table-layout:fixed;" class="table">
+                    <thead>
+                        <tr style="text-align:center;font-weight:bold;">
+                            <th>Date</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody class="inbox-table">
+                        {% for msg in messages %}
+                        {% if msg.read == false %}
+                        <tr style="background-color: #36f;" data-read="{{ msg.read }}" data-id="{{ msg.id }}" data-name="{{ msg.name }}">
+                            <th>{{ msg.time.strftime("%m-%d-%Y %H:%M:%S") }}</th>
+                            <td style="overflow-x:scroll;">{{ msg.email }}</td>
+                            <td style="overflow-x:scroll;">{{ msg.message }}</td>
+                        </tr>
+                        {% else %}
+                        <tr class="inbox-row" data-id="{{ msg.id }}" data-read="{{ msg.read }}" data-name="{{ msg.name }}">
+                            <th>{{ msg.time.strftime("%m-%d-%Y %H:%M:%S") }}</th>
+                            <td style="overflow-x:auto;">{{ msg.email }}</td>
+                            <td style="overflow-x:auto;">{{ msg.message }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                    
+                </table>
+                </div>
     		</div>
     		<div class="col-md-6">
     			<h2 style="text-align:center;">Compose</h2>
@@ -95,6 +98,60 @@
     			</div>
     		</div>
     	</div>
+    </section>
+
+    <section id="visitors">
+        <div class="container">
+            <div class="col-md-12? inbox">
+                <h1 style="text-align:center;">Visitors</h1>
+                
+                
+                
+                <br/>
+                <div class="table-holder">
+                    <table style="table-layout:fixed;" class="table visitors-table" data-filter="lastvisit">
+                        <thead>
+                            <tr style="text-align:center;font-weight:bold;">
+                                <th class="visitor" id="lastvisit">Last Visit <span class="caret"></span></th>
+                                <th class="visitor" id="ipadd">IP Address <span class="none"></span></th>
+                                <th class="visitor" id="visits">Visits <span class="none"></span></th>
+                                <th class="visitor" id="city">City <span class="none"></span></th>
+                                <th class="visitor" id="state">State <span class="none"></span></th>
+                                <th class="visitor" id="country">Country <span class="none"></span></th>
+                            </tr>
+                        </thead>
+                        {% for visitor in vs %}
+                        <tr data-id="{{ visitor.ip }}">
+                            <th>{{ visitor.last_visited.strftime("%m-%d-%Y %H:%M:%S") }}</th>
+                            <td>{{ visitor.ip }}</td>
+                            <td>{{ visitor.visits }}</td>
+                            <td>{{ visitor.location.city }}</td>
+                            <td>{{ visitor.location.state }}</td>
+                            <td>{{ visitor.location.country }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                
+            </div>
+            <!-- <div class="col-md-6">
+                <h2 style="text-align:center;">Compose</h2>
+                <br/>
+                <textarea id="curmsg" data-selected="nil" class="form-control" disabled style="resize:none;" placeholder="Selected messages will appear here" rows="5"></textarea>
+                <br/>
+                <textarea id="response" class="form-control" style="resize:none;" placeholder="Type a response..." rows="8"></textarea>
+                <br/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button id="removemsg" type="button" class="btn btn-primary pull-left"><i class="fa fa-trash"></i> Delete</button>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <button id="sendmsg" type="button" class="btn btn-primary pull-right"><i class="fa fa-envelope"></i> Send</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
     </section>
 
     <footer>
@@ -138,6 +195,10 @@
 
     <!-- Mailbox JavaScript -->
     <script src="static/js/mailbox.js"></script>
+
+    <!-- TableSorter JavaScript -->
+    <script src="static/js/jquery.tablesorter.min.js"></script>
+
 
 
 </body>
