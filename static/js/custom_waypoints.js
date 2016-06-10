@@ -32,7 +32,7 @@ $(document).ready(function() {
 
       this.destroy();
   	},
-  	offset: 'bottom-in-view'
+  	offset: '95%'
 	});
 
 	var tech_waypoint = new Waypoint({
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
       this.destroy();
   	},
-  	offset: 'bottom-in-view'
+  	offset: '95%'
 	});
 
 	var engage_waypoint = new Waypoint({
@@ -53,7 +53,7 @@ $(document).ready(function() {
     	$(this.element).addClass('animated slideInRight');
       this.destroy();
   	},
-  	offset: 'bottom-in-view'
+  	offset: '95%'
 	});
 
 	var portfolio_waypoint = new Waypoint({
@@ -75,14 +75,15 @@ $(document).ready(function() {
 	});
 
   var piechart_waypoint = new Waypoint({
-    element: document.getElementById('pieChart'),
+    element: $('#pieChart')[0],
     handler: function() {
       // Draw the pie chart when scrolled into view
       drawPie();
+      console.log("drew the pie");
       
       this.destroy();
     },
-    offset: '75%'
+    offset: 'bottom-in-view'
   });
 
 	var social_waypoint = new Waypoint({
