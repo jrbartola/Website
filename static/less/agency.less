@@ -744,14 +744,20 @@ body {
 	height: 500px;
 
 	table {
-	/*
-		tbody {
-			height: 500px;
-			overflow-y: auto;
+		thead {
+			tr {
+				th {
+					&:hover {
+						cursor: pointer;
+						background-color: darken(@brand-background, 5%);
+					}
+				}
+			
+			}
 		}
-	*/
-		tr {
-			th {
+
+		tbody {
+			tr {
 				&:hover {
 					cursor: pointer;
 					background-color: darken(@brand-background, 5%);
@@ -759,6 +765,7 @@ body {
 			}
 			
 		}
+		
 	}
 }
 

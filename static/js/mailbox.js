@@ -34,8 +34,8 @@ $(document).ready(function() {
 
 		$("#curmsg").val("Time: " + $($(this).children()[0]).html() +
 		" \nFrom: " + $(this).attr("data-name") +
-		" \nEmail: " + $($(this).children()[1]).html() + " \n\n" +
-			$($(this).children()[2]).html());
+		" \nEmail: " + $($(this).children()[2]).html() + " \n\n" +
+			$($(this).children()[3]).html());
 	});
 
 	$("#recent").on('click', function() {
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			$(this).attr("data-switch", "oldest");
 
 			$("tbody.inbox-table").each(function(elem,index){
-		    	var arr = $.makeArray($("tr",this).detach());
+		    	var arr = $.makeArray($("tr.inbox-row",this).detach());
 		        arr.reverse();
 		        $(this).append(arr);
 		    });
@@ -53,7 +53,7 @@ $(document).ready(function() {
 			$(this).html('<i class="fa fa-caret-down"></i> Most Recent');
 			$(this).attr("data-switch", "recent");
 			$("tbody.inbox-table").each(function(elem,index){
-		    	var arr = $.makeArray($("tr",this).detach());
+		    	var arr = $.makeArray($("tr.inbox-row",this).detach());
 		        arr.reverse();
 		        $(this).append(arr);
 		    });
@@ -93,8 +93,23 @@ $(document).ready(function() {
 
 	$("#sendmsg").on('click', function() {
 		if ($("#response").val() != '') {
-			var recipient = $($("[data-id=" + $("#curmsg").attr("data-selected") + "]").children()[1]).html();
-			var msg = $("#response").val();
+			var recipient = $($("[data-id=" + $("#curmsg").attr("data-selected") + "]").children()[2]).html();
+			// Terminate if no message is selected
+			if (recipient === undefined)
+				return;
+			var subject = $("#email-subject").val();
+			// Throw error and terminate if no subject
+			if (subject === '') {
+				console.error("NEED A SUBJECT");
+				return;
+			}
+				
+			var recipName = $($("[data-id=" + $("#curmsg").attr("data-selected") + "]").children()[1]).html();
+			var msg = "From: Jesse Bartola <jrbartola@gmail.com>\n" +
+			"To: " + recipName + " <" + recipient + ">\nSubject: " + subject +
+			"\n\n" + $("#response").val();
+
+			console.log(msg);
 			$.ajax({
 	            url: "/send",
 	            type: "POST",
@@ -114,6 +129,7 @@ $(document).ready(function() {
 	    	    			confirmButtonText: "Nice" 
 	    	    		});
 	    	    		$("#response").val("");
+	    	    		$("#email-subject").val("");
 	                }
 	                	
 	                

@@ -55,23 +55,25 @@
                     <thead>
                         <tr style="text-align:center;font-weight:bold;">
                             <th>Date</th>
+                            <th>Name</th>
                             <th>Email</th>
-                            <th>Message</th>
                         </tr>
                     </thead>
                     <tbody class="inbox-table">
                         {% for msg in messages %}
                         {% if msg.read == false %}
-                        <tr style="background-color: #36f;" data-read="{{ msg.read }}" data-id="{{ msg.id }}" data-name="{{ msg.name }}">
+                        <tr class="inbox-row" style="background-color: #36f;" data-read="{{ msg.read }}" data-id="{{ msg._id }}" data-name="{{ msg.name }}">
                             <th>{{ msg.time.strftime("%m-%d-%Y %H:%M:%S") }}</th>
-                            <td style="overflow-x:scroll;">{{ msg.email }}</td>
-                            <td style="overflow-x:scroll;">{{ msg.message }}</td>
+                            <td style="overflow-x:auto;">{{ msg.name }}</td>
+                            <td style="overflow-x:auto;">{{ msg.email }}</td>
+                            <td style="display:none;">{{ msg.message }}</td>
                         </tr>
                         {% else %}
-                        <tr class="inbox-row" data-id="{{ msg.id }}" data-read="{{ msg.read }}" data-name="{{ msg.name }}">
+                        <tr class="inbox-row" data-id="{{ msg._id }}" data-read="{{ msg.read }}" data-name="{{ msg.name }}">
                             <th>{{ msg.time.strftime("%m-%d-%Y %H:%M:%S") }}</th>
+                            <td style="overflow-x:auto;">{{ msg.name }}</td>
                             <td style="overflow-x:auto;">{{ msg.email }}</td>
-                            <td style="overflow-x:auto;">{{ msg.message }}</td>
+                            <td style="display:none;">{{ msg.message }}</td>
                         </tr>
                         {% endif %}
                         {% endfor %}
@@ -85,6 +87,8 @@
     			<br/>
     			<textarea id="curmsg" data-selected="nil" class="form-control" disabled style="resize:none;" placeholder="Selected messages will appear here" rows="5"></textarea>
     			<br/>
+                <input type="text" id="email-subject" class="form-control" placeholder="Subject">
+                <br/>
     			<textarea id="response" class="form-control" style="resize:none;" placeholder="Type a response..." rows="8"></textarea>
     			<br/>
     			<div class="row">
