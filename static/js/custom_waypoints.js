@@ -83,7 +83,7 @@ $(document).ready(function() {
       
       this.destroy();
     },
-    offset: 'bottom-in-view'
+    offset: '75%'
   });
 
 	var social_waypoint = new Waypoint({
