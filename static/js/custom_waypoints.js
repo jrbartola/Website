@@ -75,7 +75,7 @@ $(document).ready(function() {
 	});
 
   var piechart_waypoint = new Waypoint({
-    element: $('#pieChart')[0],
+    element: $('.slicker')[0],
     handler: function() {
       // Draw the pie chart when scrolled into view
       drawPie();
@@ -83,14 +83,15 @@ $(document).ready(function() {
       
       this.destroy();
     },
-    offset: 'bottom-in-view'
+    //context: document.getElementById('page-top'),
+    offset: '-20%'
   });
 
 	var social_waypoint = new Waypoint({
-  	element: $("ul.social-buttons")[0],
+  	element: $("#contact")[0],
  		handler: function() {
- 			$(this.element).css("visibility","visible");
-    	$(this.element).addClass('animated zoomIn');
+ 			$("ul.social-buttons").css("visibility","visible");
+    	$("ul.social-buttons").addClass('animated zoomIn');
   	},
   	offset: 'bottom-in-view'
 	});
