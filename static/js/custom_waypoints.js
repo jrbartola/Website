@@ -32,7 +32,7 @@ $(document).ready(function() {
 
       this.destroy();
   	},
-  	offset: '95%'
+  	offset: 'bottom-in-view'
 	});
 
 	var tech_waypoint = new Waypoint({
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
       this.destroy();
   	},
-  	offset: '95%'
+  	offset: 'bottom-in-view'
 	});
 
 	var engage_waypoint = new Waypoint({
@@ -53,7 +53,7 @@ $(document).ready(function() {
     	$(this.element).addClass('animated slideInRight');
       this.destroy();
   	},
-  	offset: '95%'
+  	offset: 'bottom-in-view'
 	});
 
 	var portfolio_waypoint = new Waypoint({
@@ -83,7 +83,7 @@ $(document).ready(function() {
       
       this.destroy();
     },
-    offset: '75%'
+    offset: 'bottom-in-view'
   });
 
 	var social_waypoint = new Waypoint({
