@@ -9,7 +9,7 @@ $(document).ready(function() {
 	allAbout.css("visibility","hidden");
 	$(".slicker").css("visibility", "hidden");
   
-	$("ul.social-buttons").css("visibility", "hidden");
+	//$("ul.social-buttons").css("visibility", "hidden");
 
 	var about_waypoint = new Waypoint({
   	element: document.getElementById('prof_pic'),
@@ -87,13 +87,13 @@ $(document).ready(function() {
     offset: '-20%'
   });
 
-	var social_waypoint = new Waypoint({
-  	element: $("#contact")[0],
- 		handler: function() {
- 			$("ul.social-buttons").css("visibility","visible");
-    	$("ul.social-buttons").addClass('animated zoomIn');
-  	},
-  	offset: 'bottom-in-view'
-	});
+	// var social_waypoint = new Waypoint({
+ //  	element: $("#contact")[0],
+ // 		handler: function() {
+ // 			$("ul.social-buttons").css("visibility","visible");
+ //    	$("ul.social-buttons").addClass('animated zoomIn');
+ //  	},
+ //  	offset: 'bottom-in-view'
+	// });
 	
 });
