@@ -8,19 +8,16 @@ $(document).ready(function() {
 			$(this).css("background-color", "#39f");
 			var objid = $(this).attr("data-id");
 			$.ajax({
-	            url: "/fetch",
-	            type: "POST",
-	            data: {
-	                id: objid,
-	                type: 'read'
-	            },
+	            url: "/api/" + objid,
+	            type: "PUT",
 	            success: function(resp) {
 	                // Success message
-	                if (resp == 'true') {
+	                if (resp.success ===  true) {
 	                	console.log("Read the message");
 	                	$(this).attr("data-read", "True");
 	                } else {
-	                	console.log("Got a response, but could not read the message");
+	                	console.log("Got a response, but could not read the message. Response:");
+	                	console.dir(resp);
 	                }
 	            },
 	            error: function(resp) {
@@ -65,15 +62,11 @@ $(document).ready(function() {
 		var msgid = $("#curmsg").attr("data-selected");
 		if (msgid != 'nil') {
 			$.ajax({
-	            url: "/fetch",
-	            type: "POST",
-	            data: {
-	                id: msgid,
-	                type: 'delete'
-	            },
+	            url: "/api/" + msgid,
+	            type: "DELETE",
 	            success: function(resp) {
 	                // Success message
-	                if (resp == 'true') {
+	                if (resp.success === true) {
 	                	console.log("Deleted the message!");
 	                	$("[data-id=" + msgid + "]").remove();
 	                } else {
@@ -161,7 +154,6 @@ $(document).ready(function() {
 			$(this).find('span').attr('class','caret caret-upside');
 		}
 			
-
 		// Set new filter
 		$('table.visitors-table').attr('data-filter', id_);
 		
