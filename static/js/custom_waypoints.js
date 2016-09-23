@@ -7,9 +7,14 @@ $(document).ready(function() {
 	$('.about-pic').css("visibility","hidden");
 	$('#mybio').css("visibility","hidden");
 	allAbout.css("visibility","hidden");
-	$(".slicker").css("visibility", "hidden");
-  
-	//$("ul.social-buttons").css("visibility", "hidden");
+  // Activate slicker
+  $('.slicker').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+        autoplaySpeed: 6000,
+      });
+	//$(".slicker").css("visibility", "hidden");
 
 	var about_waypoint = new Waypoint({
   	element: document.getElementById('prof_pic'),
@@ -61,18 +66,18 @@ $(document).ready(function() {
  // 		handler: function() {
  // 			$(this.element).css("visibility","visible");
  // 			// Initialize Slick when visible
-	// 		$('.slicker').slick({
- //  				slidesToShow: 1,
- //  				slidesToScroll: 1,
- //  				autoplay: true,
- // 				autoplaySpeed: 6000,
-	// 		});
+			// $('.slicker').slick({
+  	// 			slidesToShow: 1,
+  	// 			slidesToScroll: 1,
+  	// 			autoplay: true,
+ 		// 		autoplaySpeed: 6000,
+			// });
  //    	$(this.element).addClass('animated lightSpeedIn');
 
  //      this.destroy();
  //  	},
  //  	offset: '75%'
-	// });
+	// }); 
 
   var piechart_waypoint = new Waypoint({
     element: $('.slicker')[0],
@@ -86,14 +91,5 @@ $(document).ready(function() {
     //context: document.getElementById('page-top'),
     offset: '-20%'
   });
-
-	// var social_waypoint = new Waypoint({
- //  	element: $("#contact")[0],
- // 		handler: function() {
- // 			$("ul.social-buttons").css("visibility","visible");
- //    	$("ul.social-buttons").addClass('animated zoomIn');
- //  	},
- //  	offset: 'bottom-in-view'
-	// });
 	
 });
