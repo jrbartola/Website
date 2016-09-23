@@ -56,23 +56,23 @@ $(document).ready(function() {
   	offset: 'bottom-in-view'
 	});
 
-	var portfolio_waypoint = new Waypoint({
-  	element: $(".slicker")[0],
- 		handler: function() {
- 			$(this.element).css("visibility","visible");
- 			// Initialize Slick when visible
-			$('.slicker').slick({
-  				slidesToShow: 1,
-  				slidesToScroll: 1,
-  				autoplay: true,
- 				autoplaySpeed: 6000,
-			});
-    	$(this.element).addClass('animated lightSpeedIn');
+	// var portfolio_waypoint = new Waypoint({
+ //  	element: $(".slicker")[0],
+ // 		handler: function() {
+ // 			$(this.element).css("visibility","visible");
+ // 			// Initialize Slick when visible
+	// 		$('.slicker').slick({
+ //  				slidesToShow: 1,
+ //  				slidesToScroll: 1,
+ //  				autoplay: true,
+ // 				autoplaySpeed: 6000,
+	// 		});
+ //    	$(this.element).addClass('animated lightSpeedIn');
 
-      this.destroy();
-  	},
-  	offset: '75%'
-	});
+ //      this.destroy();
+ //  	},
+ //  	offset: '75%'
+	// });
 
   var piechart_waypoint = new Waypoint({
     element: $('.slicker')[0],
