@@ -10,11 +10,11 @@
 
 function drawPie() {
   $("#pieChart").drawPieChart([
-    { title: "Javascript/HTML/CSS", value: 30, color: "#2C3E50" },
+    { title: "Javascript/HTML/CSS", value: 26, color: "#2C3E50" },
     { title: "Python", value:  24, color: "#018ab6" },
     { title: "Java", value : 22, color: "#fff100" },
     { title: "Scala", value:  16, color: "#fe4400" },
-    { title: "Swift", value : 8, color: "#D7DADB" }
+    { title: "Swift", value : 12, color: "#D7DADB" }
   ]);
 }
 
