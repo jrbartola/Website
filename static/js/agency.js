@@ -1,12 +1,9 @@
-/*!
- * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+/* http://www.jessebartola.com
+ * 
+ * 
+ * Copyright Jesse Bartola 2016
  */
 
-// Initialize Parse
-//Parse.initialize("Si6Nq1yFqTGBXz9ZkwvKTPpSuc03yjloNGnQUT7A", "lqhtowSejqGuDehuBI1pciDCKeS3HSkYwvndkcyw");
-//$(".animsition").animsition();
 $(document).ready(function() {
 	// jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {
@@ -19,10 +16,33 @@ $(document).ready(function() {
 	    });
 	});
 
+    // // cache the window object
+    // $window = $(window);
+ 
+    // $('[data-type="background"]').each(function(){
+    //   // declare the variable to affect the defined data-type
+    //   var $scroll = $(this);
+                     
+    //    $(window).scroll(function() {
+    //      // HTML5 proves useful for helping with creating JS functions!
+    //      // also, negative value because we're scrolling upwards                             
+    //      var yPos = -($window.scrollTop() / $scroll.data('speed')); 
+         
+    //      // background position
+    //      var coords = '50% '+ yPos + 'px';
+ 
+    //      // move the background
+    //      $scroll.css({ backgroundPosition: coords });    
+    //    }); // end window scroll
+    // });  // end section function
+
 	// Highlight the top nav as scrolling occurs
 	$('body').scrollspy({
 	    target: '.navbar-fixed-top'
 	})
+
+	// Hide the error message for the message system
+	$('#success').hide();
 
 	// Closes the Responsive Menu on Menu Item Click
 	$('.navbar-collapse ul li a').click(function() {
@@ -48,66 +68,82 @@ $(document).ready(function() {
         });
     });
 
+    $(document).on("click", "g[data-order]", function() {
+    	$("#piediv").children().hide().removeClass("animate fadeIn");
+    	var lang = $(this).attr('data-order');
+    	switch (lang) {
+    		case '0': $("#web").fadeIn(1000); break;
+    		case '1': $("#python").fadeIn(1000); break;
+    		case '2': $("#java").fadeIn(1000); break;
+    		case '3': $("#scala").fadeIn(1000); break;
+    		case '4': $("#swift").fadeIn(1000); break;
+    		default: console.error('Something went wrong');
+    	}
+    });
+
     $("#contactForm").submit(function(event) {
     	event.preventDefault();
-    	swal({title: "Whoops!",
-    	    text: "Our messaging system is currently under maintenance." +
-    	    " Please try again later.", 
-    	    type: "error", 
-    	    confirmButtonText: "Got it!" });
-    	// $('#success').html("<div class='alert alert-danger'>");
-     //    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-     //                    .append("</button>");
-     //    $('#success > .alert-danger').append("<strong>Our messaging system is currently not working. Please try again later.");
-     //    $('#success > .alert-danger').append('</div>');
+    	// swal({title: "Whoops!",
+    	//     text: "Our messaging system is currently under maintenance." +
+    	//     " Please try again later.", 
+    	//     type: "error", 
+    	//     confirmButtonText: "Got it!" });
+    	
     	/* Uncomment for full database-integrated version of site */
 
-    	// var name = $("input#name").val();
-     //    var email = $("input#email").val();
-     //    var phone = $("input#phone").val();
-     //    var message = $("textarea#message").val();
-     //    if (name != "" && email != "" && 
-     //    	phone != "" && message != "") {
+    	var name = $("input#name").val();
+        var email = $("input#email").val();
+        var message = $("textarea#message").val();
+        if (name != "" && email != "" && 
+        	message != "") {
 
-     //    	$.ajax({
-     //            url: "/msg",
-     //            type: "POST",
-     //            data: {
-     //                name: name,
-     //                phone: phone,
-     //                email: email,
-     //                message: message
-     //            },
-     //            cache: false,
-     //            success: function(name) {
-     //                // Success message
-     //                $('#success').html("<div class='alert alert-success'>");
-     //        		$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-     //                    .append("</button>");
-     //        		$('#success > .alert-success').append("<strong>Thank you, " + name + "! I have recieved you message and will read it shortly.");
-     //        		$('#success > .alert-success').append('</div>');
-     //                //clear all fields
-     //                $('#contactForm').trigger("reset");
-     //                // Remove alert after 8 seconds
-     //                setTimeout(function() {
-     //                	$("#success").html("");
-     //                }, 8000);
-     //            },
-     //            error: function(name) {
-     //                // Fail message
-     //                alert("Error error berror on terror");
-     //                $("#success").html("");
-     //                //clear all fields
-     //                $('#contactForm').trigger("reset");
-     //            },
-     //        });
-     //    } else {
-     //    	$('#success').html("<div class='alert alert-danger'>");
-     //        $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-     //                    .append("</button>");
-     //        $('#success > .alert-danger').append("<strong>Please fill out all of the fields to send a message!");
-     //        $('#success > .alert-danger').append('</div>');
-     //    }
+        	$.ajax({
+                url: "/msg",
+                type: "POST",
+                data: {
+                    name: name,
+                    email: email,
+                    message: message
+                },
+                cache: false,
+                success: function(name) {
+             
+            		swal({title: "Thank you!",
+    	    			text: "I have recieved your message and " +
+    	    			"will get back to you shortly.", 
+    	    			type: "success", 
+    	    			confirmButtonText: "Got it" });
+                    //clear all fields
+                    $('#contactForm').trigger("reset");
+                    // Remove alert after 8 seconds
+                    $('#contactForm').find('button').prop("disabled",true);
+                    setTimeout(function() {
+                    	$('#contactForm').find('button').prop("disabled",false);
+                    }, 60000);
+                },
+                error: function(name) {
+                    // Fail message
+                    swal({title: "Whoops!",
+    	    			text: "Something went wrong here," +
+    	    			" please try again later.", 
+    	    			type: "error", 
+    	    			confirmButtonText: "Okay" });
+                    $("#success").html("");
+                    //clear all fields
+                    $('#contactForm').trigger("reset");
+                },
+            });
+        } else {
+        	// $('#success').html("<div class='alert alert-danger'>");
+         //    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+         //                .append("</button>");
+         //    $('#success > .alert-danger').append("<strong>Please fill out all of the fields to send a message!");
+         //    $('#success > .alert-danger').append('</div>');
+            $('#success').fadeIn(1000);
+            setTimeout(function() { 
+            	$('#success').hide();
+            }, 6000);
+        }
     });
 
 });

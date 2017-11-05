@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block title %}Jesse's Tutoring{% endblock %}
+
+{% block body %}
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Jesse Bartola</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                	<!-- <li>
+                        <a href="#refresh"></a>
+                    </li>
+                    <li>
+                        <a href="#inbox">Inbox</a>
+                    </li>
+                    <li>
+                        <a href="#compose">Compose</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section id="tutor">
+        <div class="container">
+            <h2>Tutoring</h2>
+            <br/>
+            <div class="col-md-3">
+                <div class="tutor-description">
+                    <!-- Container for accordion -->
+                    <div class="tab-group">
+                        <div class="tab">
+                            <input id="tab-one" type="radio" name="tabs">
+                            <label for="tab-one">Calculus I</label>
+                            <div class="tab-content">
+                                <p>Differential Calculus: Derivatives of common functions, rates of change, slopes</p>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input id="tab-two" type="radio" name="tabs">
+                            <label for="tab-two">Calculus II</label>
+                            <div class="tab-content">
+                                <p>Integral Calculus: Methods for solving integrals, volumes, sequences, series, convergence tests</p>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input id="tab-three" type="radio" name="tabs">
+                            <label for="tab-three">Computer Science</label>
+                            <div class="tab-content">
+                                <p>Java: Classes, functions, inheritance, polymorphism</p>
+                            </div>
+                        </div>
+                        <!-- <div class="tab">
+                            <input id="tab-four" type="radio" name="tabs">
+                            <label for="tab-four">Calc II</label>
+                            <div class="tab-content">
+                                <p>Integral Calculus: Methods for solving integrals, volumes, sequences, series, convergence tests</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-3">
+                <div class="scheduling">
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Jesse Bartola 2016</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="mailto:jrbartola@gmail.com"><i class="fa fa-envelope"></i></a>
+                        </li>
+                        <li><a href="http://github.com/jrbartola"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/jbartola"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/jesse-bartola-b56bb5bb"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <!-- <ul class="list-inline quicklinks">
+                        <li>
+                        </li>
+                        <li>{{ visits }} visitors with {{ resumes }} resume views!
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <!-- SweetAlert Plugin -->
+    <script src="static/js/sweetalert.min.js"></script>
+
+    <!-- PickMeUp JavaScript -->
+    <script src="static/js/jquery.pickmeup.min.js"></script>
+    <script src="static/js/jquery.pickmeup.twitter-bootstrap.min.js"></script>
+
+
+</body>
+
+{% endblock %}

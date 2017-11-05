@@ -5,6 +5,7 @@
 {% block body %}
 <body id="page-top" class="index">
 
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -46,12 +47,11 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header data-type="background" data-speed="4">
         <div class="container">
             <div class="intro-text">
-                <!-- <div class="intro-lead-in">Welcome To Our Studio!</div> -->
                 <div class="intro-heading">Hi, I'm Jesse</div>
-                <a href="#about" class="page-scroll btn btn-xl">Tell me more!</a>
+                <!-- <a href="#about" class="page-scroll btn btn-xl">Tell me more!</a> -->
             </div>
         </div>
     </header>
@@ -62,60 +62,21 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About Me</h2>
-                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
+            <div class="row" id="aboutparent">
+                <!-- <div class="col-md-4"> -->
                     <div class="about-pic">
-                        <img src="static/img/facebookprof.jpg" id="prof_pic" class="img-responsive img-circle" alt="">
+                        <h3 class="text-center">See my <a href="/resume">resume</a>/<a href="http://github.com/jrbartola">Github</a>!</h3>
+                        <img src="static/img/facebookprof.jpg" id="prof_pic" class="img-responsive" alt="">
                     </div>
-                </div>
-                <div class="col-lg-8">
+                <!-- </div> -->
+                <!-- <div class="col-md-8"> -->
                     <div class="about-bio">
-                        <p id="mybio">My name is Jesse Bartola and I am an 18 years old. I am an aspiring software engineer currently attending the <a href="http://www.umass.edu/">University of Massachusetts, Amherst</a>. I grew up around computers, mainly because my father had a job in the field as a network administrator. Since then I have developed a passion for programming web and mobile applications. I possess an unsual yearning for learning and will spend however long it takes to perfect every skill in my aresenal of knowledge.
+                        <p id="mybio">My name is Jesse and I am currently an undergraduate student studying Computer Science at the <a href="http://www.umass.edu/">University of Massachusetts, Amherst</a>. I plan on graduating in 2019 with aspirations of becoming a software developer. I have roughly 5 years of programming experience under my belt coupled with a lifelong interest in computers and technology. My work experience consists of several web and mobile software projects including scalable social networking platforms, automated texting services and mobile iOS applications. I'm currently working as a software engineer intern at <a href="http://cra.com/">Charles River Analytics</a> this summer! When I'm not programming I enjoy doing puzzles, biking, reading, and learning about new technologies.
                         </p>
                     </div>
-                </div>
-                <!-- <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="static/img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="static/img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div> -->
+                <!-- </div> -->
             </div>
         </div>
     </section>
@@ -130,29 +91,41 @@
                 </div>
             </div>
             <div class="row text-center about-skills">
-                <div id="skill1" class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Learning</h4>
-                    <p class="text-muted">I can't stress how imporant it is these days to have an ambition for education. I'm always willing to learn new things on my own time and will go out of my way to make sure I am up to date with the latest and most elegant technology.</p>
+                <div id="skill1" class="col-sm-4 skill">
+                    <div class="skill-icon">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Learning</h4>
+                    </div>  
+                    <div class="skill-desc">
+                        <p class="text-muted">An ambition for education, a will to learn, and a drive to tackle new challenges are three pivotal assets that should be harbored by every software engineer. Aside from mandatory coursework, getting ahead of the curve through self-taught methodologies has helped me tremendously in achieving a greater understanding of computer science and programming.</p>
+                    </div>
                 </div>
-                <div id="skill2" class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Technology</h4>
-                    <p class="text-muted">From calculators to iPhones to computers and beyond, working with technology is and has always been one of my biggest fortes. I am always trying to find the simpleist and most efficient ways to tackle any problems that I may encounter.</p>
+                <div id="skill2" class="col-sm-4 skill">
+                    <div class="skill-icon">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Technology</h4>
+                    </div>
+                    <div class="skill-desc">
+                        <p class="text-muted">Technology spans all facets of modern day society. From computers to iPhones and beyond, an aptitude for understanding these devices at a fundamental level is an essential part of being a succesful computer scientist. While always trying to harness the most recent and efficient technologies to tackle my projects, I enjoy the challenge and learning experience that comes with pushing myself out of my comfort zone.</p>
+                    </div>
                 </div>
-                <div id="skill3" class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-gears fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Active Engagement</h4>
-                    <p class="text-muted">Learning is one thing, but you start to make real progress when you can apply what you've learned to hands-on activites. Because of this, I am always involved in a few projects of my own. Making projects with the material you have learned is a great way to show and further develop your skill set.</p>
+                <div id="skill3" class="col-sm-4 skill">
+                    <div class="skill-icon">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-gears fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Active Engagement</h4>
+                    </div>
+                    <div class="skill-desc">
+                        <p class="text-muted">Learning a difficult concept or adjusting a previous mentality to new industry standards may seem tedious and daunting. As challenging as it is, the light at the end of the tunnel is enough to spark my drive to get there. The key to understanding is simple- practice! While a thorough education in computer science is important, hands-on activities help to solidify your skill-set which is why I am always involved in multiple outside projects of my own.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -169,7 +142,7 @@
             </div>
             <div class="row slicker">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#fashionAdviceModal" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -183,7 +156,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                    <a href="#basicChatModal" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -197,17 +170,45 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a href="#scopiumModal" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="static/img/iphone_bg_scop.jpg" class="img-responsive" id="scopium_pic" alt="">
+                        <img src="static/img/scopium_iphone.png" class="img-responsive" id="scopium_pic" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Scopium</h4>
                         <p class="text-muted">Award-Winning iOS Application</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#waveCalendarModal" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="static/img/wave_calendar_front.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Wave Calendar</h4>
+                        <p class="text-muted">Party Social Networking</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#medicusModal" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="static/img/medicus_iphone.png" class="img-responsive" alt="" id="medicus_pic">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Medicus</h4>
+                        <p class="text-muted">Skin Condition Identification</p>
                     </div>
                 </div>
             </div>
@@ -216,46 +217,28 @@
 
     
 
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <!-- SkillSet Section -->
+    <section id="skillset" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Skill Set</h2>
-                    <h3 class="section-subheading text-muted">----------------</h3>
+                    <h2 class="section-heading">The Breakdown</h2>
+                    
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="static/img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Who</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        
-                    </div>
+            <div class="row" id="pieparent">
+                <div id="pieChart" class="chart">
                 </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="static/img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Are</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="static/img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>These people?!?!</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        
-                    </div>
+                <div id="piediv">
+                    <p id="pietext" class="large text-muted">An understanding of different languages and their applications has helped me throughout the years in creating projects with various objectives in mind. </p>
+                    <p id="web" style="display:none;" class="large text-muted">Web development is my personal favorite area of software development. After working with numerous frameworks such as Flask, Node.js, Spring MVC and .NET I can really appreciate the versatility that web programming has to offer. </p>
+                    <p id="python" style="display:none;" class="large text-muted">Python is a fun little language I've worked with to create many websites and applications using the Flask framework as well as standalone scripts to do my bidding. It is loosely-typed with an unobtrusive syntax making it easy to write robust, scalable application scripts.</p>
+                    <p id="java" style="display:none;" class="large text-muted">Java was one of the first programming languages I ever learned. Although not my favorite, it laid the groundwork for the comprehension of fundamental programming methodolgies I encounter on a regular basis. My exposure to Java has enabled me to create a fair share of algorithmic and desktop applications. </p>
+                    <p id="scala" style="display:none;" class="large text-muted">Functional programming has gained increasing popularity over the past few years due to its brevity and natural accommodation for concurrency. An introduction to this paradigm has shed light on some of the amazing capabilities of modern day computation. </p>
+                    <p id="swift" style="display:none;" class="large text-muted">iOS development is at the cornerstone of today's mobile software industry. Knowledge of how to create user-friendly iPhone applications paves the way for state of the art innovation in the years to come. With this in mind, I have made sure to include this specific type of development in my knowledge base. </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
+            <br/>
         </div>
     </section>
     
@@ -265,7 +248,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Me</h2>
-                    <h3 class="section-subheading text-muted">Project inquiries, compliments, and greetings are all accepted!</h3>
+                    <h3 style="color:antiquewhite;" class="section-subheading text-muted">Project inquiries, compliments, and greetings are all accepted!</h3>
                 </div>
             </div>
             <div class="row">
@@ -292,7 +275,11 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
-                                <div id="success"></div>
+                                <div id="success">
+                                    <div class="alert alert-danger">
+                                        <strong>Please fill out all of the fields to send a message!</strong>
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-xl">Send Message</button>
                             </div>
                         </div>
@@ -307,7 +294,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Jesse Bartola 2016</span>
+                    <span class="copyright">Copyright &copy; Jesse Bartola 2017</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -317,7 +304,7 @@
                         </li>
                         <li><a href="https://www.facebook.com/jbartola"><i class="fa fa-facebook"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        <li><a href="https://www.linkedin.com/in/jessebartola"><i class="fa fa-linkedin"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -325,19 +312,17 @@
                     <ul class="list-inline quicklinks">
                         <li>
                         </li>
-                        <li>You are the {{ visits }}th visitor!
+                        <li>You are visitor # {{ visits }}!
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+    
 
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- TxtAdvice Modal -->
+    <div class="portfolio-modal modal fade" id="fashionAdviceModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -353,13 +338,13 @@
                             <h2>TxtAdvice (OutFitr)</h2>
                             <p class="item-intro text-muted">Instant fashion advice</p>
                             <img class="img-responsive img-centered" src="static/img/txtadvice.png" alt="">
-                            <p>Ever second-think youself after putting on an outfit before you head out the door? Few people haven't, which is why I decided to become the lead platform developer of TxtAdvice. At any moment a professional stylist is ready to answer any question you might have about your current outfit. Send in a question or a picture and you'll have an answer in no time!</p>
+                            <p>Ever second-guess yourself after putting on an outfit before heading out the door? I know I do! As the lead platform developer of TxtAdvice I worked with a few colleagues of mine to assemble an app aiming to deliver real-time fashion advice to users by connecting them with professional stylists. Send in a question or a picture and you'll have an expert opinion in no time.</p>
                             <p>
-                                <strong>Want to try it out? </strong> Go ahead down to <a href="http://txtadvice.com/">txtadvice.com</a> and enter your phone number in the box!</p>
-                            <ul class="list-inline">
+                                <!-- <strong>Want to try it out? </strong> Go ahead down to <a href="http://txtadvice.com/">txtadvice.com</a> and enter your phone number in the box!</p> -->
+                            <!-- <ul class="list-inline">
                                 <li>Date: June 2015</li>
-                            </ul>
-                            <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
+                            </ul> -->
+                            <button type="button" class="btn btn-xl" data-dismiss="modal">Back <i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -367,8 +352,8 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Basic Chat Modal -->
+    <div class="portfolio-modal modal fade" id="basicChatModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -381,10 +366,10 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2>Basic Chat</h2>
-                            <p class="item-intro text-muted">Portable chat messaging</p>
+                            <p class="item-intro text-muted">Portable Instant Messaging</p>
                             <img class="img-responsive img-centered" src="static/img/basicchat.png" alt="">
-                            <p>Basic Chat is a small project making good use of Node.js and MongoDB. It allows the user to send instant messages to other users that are logged in. The site also tracks analytics for each user that can be viewed on their profile. Check out the project on <a href="https://github.com/jrbartola/BasicChat">Github</a>! More features are coming soon.</p>
-                            <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
+                            <p>Basic Chat functions as a lightweight chat room providing a seamless instant-messaging communication similar to Facebook's. The site also tracks analytics for each user which is available on their profile page. Check out the project on <a href="https://github.com/jrbartola/BasicChat">Github</a>! More features to be announced.</p>
+                            <button type="button" class="btn btn-xl" data-dismiss="modal">Back <i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -392,8 +377,8 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Scopium Modal -->
+    <div class="portfolio-modal modal fade" id="scopiumModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -414,9 +399,67 @@
                             <div class="col-md-6">
                                 <img class="img-responsive img-centered" src="static/img/scopium1.jpg">
                             </div>
-                            
-                            <p>Scopium is a project that is near and dear to my heart. <strong>See more:</strong> <a href="http://devpost.com/software/scopium">Devpost</a>.</p>
-                            <button type="button" class="btn btn-xl" data-dismiss="modal"><i class="fa fa-times"></i> Okay, Cool!</button>
+                            <p>Scopium is a project some friends and I created for Hack UMASS III. It makes use of Arduino microcontrollers which transmit serialized data to an iOS application, helping monitor symptoms of Multiple Sclerosis for patients in need. Studies show that MS patients aware of the severity of their symptoms live more comfortably than those who are left in the dark. <strong>See more:</strong> <a href="http://devpost.com/software/scopium">Devpost</a>.</p>
+                            <button type="button" class="btn btn-xl" data-dismiss="modal">Back <i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave Calendar Modal -->
+    <div class="portfolio-modal modal fade" id="waveCalendarModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Wave Calendar</h2>
+                            <p class="item-intro text-muted">Party Scheduling Social Network</p>
+                            <div class="col-md-12">
+                                <img class="img-responsive img-centered" src="static/img/wave_calendar.jpg">
+                            </div>
+                            <p>If you've ever been bored and wondered what events are going on around your area, you aren't alone. Wave Calendar provides an easy way for users to find out where the parties (waves) are around them! Once signed up you can create your own wave, browse parties in your local area and rate those you've attended. This web application is built with MEAN stack. Check out the project on <a href="https://github.com/jrbartola/WaveCalendar">Github</a>!</p>
+                            <button type="button" class="btn btn-xl" data-dismiss="modal">Back <i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medicus Modal -->
+    <div class="portfolio-modal modal fade" id="medicusModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Medicus</h2>
+                            <p class="item-intro text-muted">Skin Condition Diagnostic Application</p>
+                            <div class="col-md-6">
+                                <img class="img-responsive img-centered" src="static/img/medicus_camera.jpg">
+                            </div>
+                            <div class="col-md-6">
+                                <img class="img-responsive img-centered" src="static/img/medicus_diagnosis.jpg">
+                            </div>
+                            <p>Medicus is yet another mobile application my team and I developed at Hack UMASS! It harnesses image recognition to confidently diagnose various skin ailments given a picture of the condition. An efficient diagnostic tool modeled as an iPhone application has the potential to save doctors time as well as mitigate user anxiety by providing them with an immediate, accurate diagnosis. <strong>See more:</strong> <a href="https://devpost.com/software/medicus">Devpost</a>.</p>
+                            <button type="button" class="btn btn-xl" data-dismiss="modal">Back <i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -430,14 +473,13 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="static/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
+    <!-- Plugin Easing/Classie JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="static/js/classie.js"></script>
     <script src="static/js/cbpAnimatedHeader.js"></script>
 
     <!-- Contact Form JavaScript -->
     <script src="static/js/jqBootstrapValidation.js"></script>
-   <!--  // <script src="static/js/contact_me.js"></script> -->
 
     <!-- Waypoints Plugin -->
     <script src="static/js/noframework.waypoints.min.js"></script>
@@ -451,15 +493,16 @@
     <!-- Swapsies Plugin -->
     <script src="static/js/jquery-swapsies.js"></script>
 
+    <!-- PieChart JavaScript -->
+    <script src="static/js/piechart.js"></script>
+
     <!-- Custom Waypoints -->
     <script src="static/js/custom_waypoints.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="static/js/agency.js"></script>
+    <script src="static/js/bartola.js"></script>
 
     
 
 </body>
 {% endblock %}
-
-</html>
