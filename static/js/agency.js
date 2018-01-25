@@ -1,4 +1,4 @@
-/* http://www.jessebartola.com/
+/* http://www.jessebartola.com
  * 
  * 
  * Copyright Jesse Bartola 2016
@@ -16,10 +16,30 @@ $(document).ready(function() {
 	    });
 	});
 
+    // // cache the window object
+    // $window = $(window);
+ 
+    // $('[data-type="background"]').each(function(){
+    //   // declare the variable to affect the defined data-type
+    //   var $scroll = $(this);
+                     
+    //    $(window).scroll(function() {
+    //      // HTML5 proves useful for helping with creating JS functions!
+    //      // also, negative value because we're scrolling upwards                             
+    //      var yPos = -($window.scrollTop() / $scroll.data('speed')); 
+         
+    //      // background position
+    //      var coords = '50% '+ yPos + 'px';
+ 
+    //      // move the background
+    //      $scroll.css({ backgroundPosition: coords });    
+    //    }); // end window scroll
+    // });  // end section function
+
 	// Highlight the top nav as scrolling occurs
 	$('body').scrollspy({
 	    target: '.navbar-fixed-top'
-	});
+	})
 
 	// Hide the error message for the message system
 	$('#success').hide();
@@ -41,7 +61,7 @@ $(document).ready(function() {
         $(this).swap({
             target: "skill" + swapper, // Mandatory. The ID of the element we want to swap with
             opacity: "0.95", // Optional. If set will give the swapping elements a translucent effect while in motion
-            speed: 700, // Optional. The time taken in milliseconds for the animation to occur
+            speed: 1000, // Optional. The time taken in milliseconds for the animation to occur
             callback: function() { // Optional. Callback function once the swap is complete
                 //alert("Swap Complete");
             }
@@ -127,3 +147,5 @@ $(document).ready(function() {
     });
 
 });
+
+

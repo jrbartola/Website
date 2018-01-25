@@ -4,5 +4,8 @@ Thumbs.db
 .idea/
 # Unused img backup
 static/img-backup/
-#auto-sftp config
+# Unused css/less
+static/css/agency_original.css
+static/css/timeline.css
+static/less/timeline.less
 sftp-config.json

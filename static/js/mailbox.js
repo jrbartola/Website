@@ -23,7 +23,7 @@ $(document).ready(function() {
 	            error: function(resp) {
 	                // Fail message
 	                console.log("ERROR: Could not read the message");
-	            },
+	            }
 	        });
 		}
 		// Add the id to the current selected attribute
@@ -130,7 +130,7 @@ $(document).ready(function() {
 	            error: function(resp) {
 	                // Fail message
 	                console.log("ERROR: Message not delivered");
-	            },
+	            }
 	        });
 		}
 	});
@@ -153,7 +153,6 @@ $(document).ready(function() {
 			$('th.visitor#' + prevFilter).find('span').attr('class','none');
 			$(this).find('span').attr('class','caret caret-upside');
 		}
-			
 		// Set new filter
 		$('table.visitors-table').attr('data-filter', id_);
 		
