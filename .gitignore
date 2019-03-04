@@ -2,10 +2,4 @@
 Thumbs.db
 # Useless directories
 .idea/
-# Unused img backup
-static/img-backup/
-# Unused css/less
-static/css/agency_original.css
-static/css/timeline.css
-static/less/timeline.less
-sftp-config.json
+www/node_modules
