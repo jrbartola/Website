@@ -7,6 +7,10 @@ body {
     background-color: #333;
 }
 
+.flex {
+    display: flex;
+}
+
 .navbar {
     height: 120px;
 }
@@ -16,7 +20,46 @@ body {
 }
 
 .nav-item {
+    width: 20%;
+    z-index: 10;
+    border-radius: 50%;
     text-align: center;
+    transition: background-color 0.5s;
+}
+
+.nav-item.selected {
+    /*background-color: #cccccc;*/
+    transition: background-color 0.5s;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.nav-item-cover {
+    z-index: 1;
+    background-color: #dee2e6;
+    height: 130px;
+    /*width: 331px;*/
+    width: 25vw;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.tab-0 {
+    left: 2vw;
+}
+
+.tab-1 {
+    left: 25.2vw;
+}
+
+.tab-2 {
+    left: 48.3vw;
+}
+
+.tab-3 {
+    left: 71vw;
 }
 
 .nav-icon {
@@ -33,3 +76,47 @@ body {
     border-left: solid 1px #e6e6e6;
 }
 
+#info {
+    color: #e6e6e6;
+    text-align: center;
+    background-color: #555C70;
+    padding: 30px;
+}
+
+.info-header {
+    font-weight: 800;
+}
+
+.info-picture {
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+#traits {
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    margin-top: 20px;
+    justify-content: center;
+    font-size: 2em;
+    list-style: none;
+}
+
+.social-icon {
+    flex-basis: 15%;
+}
+
+.social-icon a {
+    position: relative;
+    bottom: 0;
+    color: #e6e6e6;
+}
+
+.social-icon a:hover {
+    color: #fff;
+    bottom: 5px;
+    transition: all 0.3s;
+}
