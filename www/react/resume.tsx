@@ -7,6 +7,8 @@ import {
 } from 'react-accessible-accordion';
 import 'react-accessible-accordion/dist/fancy-example.css';
 
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+
 import {
 	CRA_INTERN_DESC,
 	GOOGLE_INTERN_DESC,
@@ -15,6 +17,8 @@ import {
 	UGTA_DESC
 } from "./descriptions/experience";
 import {HACK_UMASS3_DESC, HACK_UMASS5_DESC, SKILLS_USA_DESC} from "./descriptions/awards";
+import {GETRequest} from "./util/http";
+import {getRepositories} from "./util/code-counter";
 
 interface ExperienceItemProps { timeFrame: string, company: string, location: string, jobTitle: string,
 	                            description: string, imageUrl?: string }
@@ -25,8 +29,11 @@ interface EducationProps { timeFrame: string, school: string, location: string, 
 interface AwardProps { timeFrame: string, event: string, location: string, award: string, description: string,
 	                   imageUrl?: string, awardUrl?: string }
 
+
+interface SkillProps { skillName: string, skillNum: number, minValue: number, maxValue: number }
+
 interface ResumeProps {}
-interface ResumeState {}
+interface ResumeState { codeMap: Map<string, number> }
 
 /**
  * Defines the resume panel within the main carousel
@@ -35,7 +42,60 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
 	constructor(props) {
 		super(props);
 
+        this.mapRepositories = this.mapRepositories.bind(this);
+		this.mapLanguageResponse = this.mapLanguageResponse.bind(this);
+
+		// Hardcode this in case the Github API gives us problems later down the line
+		this.state = { codeMap: new Map<string, number>([["Javascript", 1192159], ["CSS", 570597],
+			                                                     ["HTML", 124604], ["Python", 118751],
+			                                                     ["Swift", 89462], ["Typescript", 72043],
+			                                                     ["Java", 56195], ["Scala", 17646]]) }
+
 	}
+
+	componentDidMount() {
+		GETRequest("https://api.github.com/users/jrbartola/repos").then(resp => {
+            const repos = this.mapRepositories("jrbartola", resp as object[]);
+            const resps = repos.map(r => GETRequest(`https://api.github.com/repos/jrbartola/${r}/languages`));
+            Promise.all(resps).then(this.mapLanguageResponse);
+		}).catch(resp => {
+			console.error("Something went wrong...", resp);
+		});
+	}
+
+	/**
+	 * Maps the response object from the Github request to an array of repository names
+	 *
+	 * @param {string} username: The username of the Github user
+	 * @param {object[]} repos: An array of repository response objects owned by the given user
+	 *
+	 * @returns {string[]}: An array of repository names
+	 */
+	private mapRepositories(username: string, repos: object[]): string[] {
+		return repos.filter(obj => !obj["fork"]).map(obj => obj["name"]);
+	};
+
+    /**
+	 * Obtains a mapping from language names to number of bytes written in that language for all repositories, and then
+	 * updates the Skills state accordingly
+	 *
+	 * @param {object[]} responses: An array of objects whose keys are languages, and values are bytes in that language
+	 *
+	 */
+	private mapLanguageResponse(responses: object[]): void {
+		let codeMap = new Map<string, number>();
+
+		responses.forEach(resp => {
+			Object.keys(resp).forEach(language => {
+				if (!codeMap.has(language)) {
+					codeMap.set(language, 0);
+				}
+				codeMap.set(language, codeMap.get(language) + resp[language]);
+			});
+		});
+
+		this.setState({codeMap: codeMap});
+	};
 
 	render() {
 		return (
@@ -50,6 +110,7 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
 					<Experience />
 					<Education />
 					<Awards />
+					<Skills codeMap={this.state.codeMap}/>
 				</Accordion>
 			</div>
 		)
@@ -170,7 +231,7 @@ const EducationItem = (props: EducationProps) => {
 					<p className="edu-gpa">GPA: {props.gpa}</p>
 					<p className="edu-location"><i className="fas fa-map-marker-alt"></i> {props.location}</p>
 					{ props.imageUrl &&
-						<img className="company-logo" src={props.imageUrl} alt="Company Logo"/>
+						<img className="school-logo" src={props.imageUrl} alt="Company Logo"/>
 					}
 				</div>
 				<div className="col-sm-8">
@@ -223,7 +284,7 @@ const AwardItem = (props: AwardProps) => {
 					<p className="award-location"><i className="fas fa-map-marker-alt"></i> {props.location}</p>
 
 					{ props.imageUrl &&
-						<img className="company-logo" src={props.imageUrl} alt="Event Logo"/>
+						<img className="event-logo" src={props.imageUrl} alt="Event Logo"/>
 					}
 				</div>
 				<div className="col-sm-8">
@@ -240,4 +301,36 @@ const AwardItem = (props: AwardProps) => {
 			</div>
 		</div>
 	)
+};
+
+
+/**
+ * Functional component that renders the skills accordion section within the resume
+ * @constructor
+ */
+const Skills = ({codeMap}) => {
+	console.log(codeMap);
+	const orderedLangs: object[] = [...codeMap.entries()].sort((a, b) => a[1] > b[1] ? -1 : 1)
+		                                                 .splice(0, 8)
+		                                                 .map(([k, v]) => ({language: k, Kilobytes: v/1000}));
+
+	return (
+        <AccordionItem>
+				<AccordionItemTitle>
+					<h3><i className="fas fa-chart-bar"></i>    Skills</h3>
+				</AccordionItemTitle>
+				<AccordionItemBody>
+					<h4>Code on Github</h4>
+					<ResponsiveContainer height={300} width="100%">
+						<BarChart width={600} height={300} data={orderedLangs} margin={{top: 20, right: 30, left: 20, bottom: 20}}>
+						   <CartesianGrid strokeDasharray="3 3"/>
+						   <XAxis dataKey="language" label={{value: 'Language', position: 'bottom'}} />
+						   <YAxis label={{value: 'Amount (Kilobytes)', angle: -90, position: 'insideBottomLeft'}} />
+						   <Tooltip/>
+						   <Bar dataKey="Kilobytes" fill="#00d4d4" />
+						</BarChart>
+					</ResponsiveContainer>
+				</AccordionItemBody>
+		</AccordionItem>
+	);
 };

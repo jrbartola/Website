@@ -177,6 +177,7 @@ a:hover {
 
 #resume {
     max-height: 604px;
+    min-height: 604px;
     overflow-y: auto;
 }
 
@@ -197,7 +198,7 @@ a:hover {
     color: #333;
 }
 
-.company-logo {
+.company-logo, .school-logo, .event-logo {
     height: 150px;
     width: 150px;
 }
@@ -239,6 +240,11 @@ a:hover {
     content: "\f058";
 }
 
+.code-progress {
+    border-radius: 7px;
+    background-color: #00d4d4;
+}
+
 
 @media (max-width: 991px) {
     nav {
@@ -251,5 +257,9 @@ a:hover {
 
     #container {
         margin-left: 15px;
+    }
+
+    .company-logo, .school-logo, .event-logo {
+        margin-bottom: 30px;
     }
 }
