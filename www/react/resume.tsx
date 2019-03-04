@@ -14,6 +14,7 @@ import {
 	TXTADVICE_DESC,
 	UGTA_DESC
 } from "./descriptions/experience";
+import {HACK_UMASS3_DESC, HACK_UMASS5_DESC, SKILLS_USA_DESC} from "./descriptions/awards";
 
 interface ExperienceItemProps { timeFrame: string, company: string, location: string, jobTitle: string,
 	                            description: string, imageUrl?: string }
@@ -22,7 +23,7 @@ interface EducationProps { timeFrame: string, school: string, location: string, 
 	                       imageUrl?: string, gpa: string, courses: JSX.Element }
 
 interface AwardProps { timeFrame: string, event: string, location: string, award: string, description: string,
-	                   imageUrl?: string }
+	                   imageUrl?: string, awardUrl?: string }
 
 interface ResumeProps {}
 interface ResumeState {}
@@ -173,7 +174,7 @@ const EducationItem = (props: EducationProps) => {
 					}
 				</div>
 				<div className="col-sm-8">
-					<h4 className="job-title">{props.major}</h4>
+					<h4 className="edu-title">{props.major}</h4>
 					{props.courses}
 				</div>
 			</div>
@@ -193,10 +194,14 @@ const Awards = () => {
 					<h3><i className="fas fa-medal"></i>    Awards</h3>
 				</AccordionItemTitle>
 				<AccordionItemBody>
+					<AwardItem timeFrame="Oct 2017" event="Hack UMass III" location="Amherst, MA" award="Multiple Awards"
+							   description={HACK_UMASS5_DESC} imageUrl="../static/img/hackumass-logo5.png"
+							   awardUrl="https://devpost.com/software/pharmasuitable-shf3cx" />
 					<AwardItem timeFrame="Oct 2015" event="Hack UMass III" location="Amherst, MA" award="3rd Place"
-							   description="umass amherst school" imageUrl="../static/img/hackumass-logo.png" />
+							   description={HACK_UMASS3_DESC} imageUrl="../static/img/hackumass-logo.png"
+							   awardUrl="https://devpost.com/software/scopium" />
 					<AwardItem timeFrame="April 2015" event="NJ SkillsUSA State Championships" location="Bridgewater, NJ"
-							   award="2nd Place" description="Skills uSA" imageUrl="../static/img/skillsusa-logo.jpeg" />
+							   award="2nd Place" description={SKILLS_USA_DESC} imageUrl="../static/img/skillsusa-logo.jpeg" />
 				</AccordionItemBody>
 		</AccordionItem>
 	);
@@ -214,13 +219,22 @@ const AwardItem = (props: AwardProps) => {
 				<div className="col-sm-4 award-info">
 					<h4 className="award-timeframe">{props.timeFrame}</h4>
 					<h4 className="award-title">{props.event}</h4>
+
 					<p className="award-location"><i className="fas fa-map-marker-alt"></i> {props.location}</p>
+
 					{ props.imageUrl &&
 						<img className="company-logo" src={props.imageUrl} alt="Event Logo"/>
 					}
 				</div>
 				<div className="col-sm-8">
-					<h4 className="job-title">{props.award}</h4>
+					{ props.awardUrl &&
+					    <a href={props.awardUrl} target="_blank">
+							<h4 className="award-title">{props.award} <i className="fas fa-link"></i></h4>
+					    </a>
+					}
+					{ !props.awardUrl &&
+					    <h4 className="award-title">{props.award}</h4>
+					}
 					<p>{props.description}</p>
 				</div>
 			</div>

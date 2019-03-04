@@ -1,5 +1,5 @@
 /**
- * File containing static text data that is used in the description of timeline fields in the resume accordion
+ * File containing static text data that is used in the description of experience timeline fields in the resume accordion
  */
 
 export const SCALA_WEB_DESC = "Full stack developer for the UMass College of Information and Computer Science's MS and " +

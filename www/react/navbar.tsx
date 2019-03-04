@@ -56,6 +56,6 @@ const NavItem = (props: NavItemProps) => {
 	const selectedClass = props.selected ? "selected" : "";
     return <div className={`nav-item flex-column ${selectedClass}`} onClick={props.onClick}>
 		       <i className={`fas ${props.iconClass} nav-icon`}></i>
-		       <span className="nav-link" href="#">{props.caption}</span>
+		       <span className="nav-link">{props.caption}</span>
 		   </div>
 };

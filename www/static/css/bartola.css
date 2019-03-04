@@ -202,7 +202,7 @@ a:hover {
     width: 150px;
 }
 
-.job-title::after {
+.job-title::after .award-title::after, .edu-title::after {
     content: " ";
     display: block;
     width: 40px;
