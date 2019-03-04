@@ -15,7 +15,7 @@ export class Container extends React.Component<ContainerProps, ContainerState> {
 
 	render() {
 		return (
-			<div id="container">
+			<div id="container" className="container-fluid">
 			    <Navbar />
 			</div>
 		)
