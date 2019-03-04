@@ -20,6 +20,7 @@
     "immutability-helper": "^3.0.0",
     "moment": "^2.24.0",
     "react": "^16.4.1",
+    "react-accessible-accordion": "^2.4.5",
     "react-dom": "^16.4.1",
     "react-loading-animation": "^1.4.0",
     "react-router-dom": "^4.3.1",

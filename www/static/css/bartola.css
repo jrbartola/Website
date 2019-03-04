@@ -7,6 +7,18 @@ body {
     background-color: #333;
 }
 
+p {
+    margin-bottom: 0;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
 .flex {
     display: flex;
 }
@@ -116,6 +128,90 @@ body {
 }
 
 .social-icon a:hover {
+    color: #fff;
+    bottom: 5px;
+    transition: all 0.3s;
+}
+
+#info-footer {
+    margin-top: 25px;
+}
+
+
+.content-carousel {
+    padding-left: 0;
+}
+
+#carousel {
+    width: 100%;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.carousel-header {
+    justify-content: space-between;
+    padding: 20px 30px;
+    color: white;
+    background-color: #00bdbd;
+}
+
+.carousel-header h2 {
+    font-weight: 800;
+}
+
+.bio {
+    padding: 25px;
+    font-size: 1.2em;
+}
+
+.experience-item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#resume {
+    max-height: 604px;
+    overflow-y: auto;
+}
+
+.job-info {
+    text-align: center;
+}
+
+.job-timeframe {
+    color: #e0e0e0;
+}
+
+.job-company {
+    color: #333;
+}
+
+.job-location {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.company-logo {
+    height: 150px;
+    width: 150px;
+}
+
+.job-title::after {
+    content: " ";
+    display: block;
+    width: 40px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border-bottom: 5px solid #00d4d4;
+}
+
+.download-btn {
+    position: relative;
+    bottom: 0;
+}
+
+.download-btn:hover {
     color: #fff;
     bottom: 5px;
     transition: all 0.3s;

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Navbar } from './navbar';
 import { InfoPane } from "./info-pane";
+import {Carousel} from "./carousel";
 
 interface ContainerProps {}
 interface ContainerState { selectedTab: number }
@@ -35,10 +36,10 @@ export class Container extends React.Component<ContainerProps, ContainerState> {
 					<div className="col-md-4">
 						<InfoPane />
 					</div>
-					<div className="col-md-8">
+					<div className="col-md-8 content-carousel">
+						<Carousel selectedTab={this.state.selectedTab} />
 					</div>
 				</div>
-
 			</div>
 		)
 	}

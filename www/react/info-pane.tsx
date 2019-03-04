@@ -21,7 +21,7 @@ export class InfoPane extends React.Component<InfoPaneProps, InfoPaneState> {
 			<div id="info">
 				<h2 className="info-header">JESSE BARTOLA</h2>
 
-				<img className="info-picture bg-light" src="../static/img/6522_square.png" />
+				<img className="info-picture bg-light" src="../static/img/6522_square.png" alt="Jesse's Portrait" />
 
 				<h6 id="traits">software engineer, math lover, finance enthusiast</h6>
 
@@ -44,7 +44,9 @@ export class InfoPane extends React.Component<InfoPaneProps, InfoPaneState> {
 					</div>
 				</div>
 
-				<footer>
+
+				<footer id="info-footer">
+					<p><i className="fas fa-map-marker-alt"></i> Amherst, MA</p>
 					<span>© Jesse Bartola, 2019</span>
 				</footer>
 			</div>
