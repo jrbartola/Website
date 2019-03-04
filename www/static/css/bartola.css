@@ -7,6 +7,10 @@ body {
     background-color: #333;
 }
 
+li {
+    list-style: none;
+}
+
 p {
     margin-bottom: 0;
 }
@@ -88,6 +92,7 @@ a:hover {
     border-left: solid 1px #e6e6e6;
 }
 
+
 #info {
     color: #e6e6e6;
     text-align: center;
@@ -164,7 +169,7 @@ a:hover {
     font-size: 1.2em;
 }
 
-.experience-item {
+.experience-item, .edu-item, .award-item {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #e6e6e6;
@@ -175,19 +180,19 @@ a:hover {
     overflow-y: auto;
 }
 
-.job-info {
+.job-info, .edu-info, .award-info {
     text-align: center;
 }
 
-.job-timeframe {
+.job-timeframe, .edu-timeframe, .award-timeframe {
     color: #e0e0e0;
 }
 
-.job-company {
+.job-company, .edu-school {
     color: #333;
 }
 
-.job-location {
+.job-location, .edu-location, .award-location {
     margin-bottom: 20px;
     color: #333;
 }
@@ -206,6 +211,10 @@ a:hover {
     border-bottom: 5px solid #00d4d4;
 }
 
+.edu-gpa {
+    font-style: italic;
+}
+
 .download-btn {
     position: relative;
     bottom: 0;
@@ -215,4 +224,32 @@ a:hover {
     color: #fff;
     bottom: 5px;
     transition: all 0.3s;
+}
+
+.course-list {
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.course-list li::before {
+    margin-right: 10px;
+    color: #00d4d4;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    content: "\f058";
+}
+
+
+@media (max-width: 991px) {
+    nav {
+        display: none !important;
+    }
+
+    .nav-item-cover {
+        display: none;
+    }
+
+    #container {
+        margin-left: 15px;
+    }
 }
