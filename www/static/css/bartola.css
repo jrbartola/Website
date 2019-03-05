@@ -106,8 +106,8 @@ a:hover {
 
 .info-picture {
     padding: 10px;
-    height: 300px;
-    width: 300px;
+    width: 70%;
+    height: auto;
 }
 
 #traits {
@@ -141,7 +141,6 @@ a:hover {
 #info-footer {
     margin-top: 25px;
 }
-
 
 .content-carousel {
     padding-left: 0;
@@ -255,7 +254,7 @@ a:hover {
         display: none;
     }
 
-    #container {
+    .carousel-container {
         margin-left: 15px;
     }
 

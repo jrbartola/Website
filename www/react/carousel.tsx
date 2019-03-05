@@ -4,7 +4,7 @@ import {Resume} from "./resume";
 
 
 interface CarouselProps { selectedTab: number }
-interface CarouselState {}
+interface CarouselState { windowWidth: number }
 
 /**
  * Defines the carousel container displaying the selected tab's data
@@ -14,6 +14,27 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
 		super(props);
 
 		this.makeContent = this.makeContent.bind(this);
+		this.updateWindowWidth = this.updateWindowWidth.bind(this);
+
+		const width = window.innerWidth
+			|| document.documentElement.clientWidth
+			|| document.body.clientWidth;
+
+		this.state = { windowWidth: width };
+	}
+
+	componentDidMount() {
+		window.addEventListener("resize", this.updateWindowWidth);
+	}
+
+	/**
+	 * Updates the window width state variable when the window is resized
+	 */
+	updateWindowWidth() {
+		const width = window.innerWidth
+			|| document.documentElement.clientWidth
+			|| document.body.clientWidth;
+		this.setState({windowWidth: width});
 	}
 
 	/**
@@ -37,10 +58,20 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
 
 
 	render() {
+        const width = this.state.windowWidth;
+
 		return (
-			<div className="row">
+			<div className="row carousel-container">
 				<div id="carousel">
-					{ this.makeContent() }
+					{/* If the width is < 692px, then allow mobile user to scroll through the carousel */}
+					{ width >= 692 && this.makeContent() }
+					{ width < 692 &&
+					  <div>
+						  <Home />
+					      <Resume />
+					  </div>
+
+					}
 				</div>
 			</div>
 		)

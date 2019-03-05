@@ -30,9 +30,7 @@ interface AwardProps { timeFrame: string, event: string, location: string, award
 	                   imageUrl?: string, awardUrl?: string }
 
 
-interface SkillProps { skillName: string, skillNum: number, minValue: number, maxValue: number }
-
-interface ResumeProps {}
+interface ResumeProps { }
 interface ResumeState { codeMap: Map<string, number> }
 
 /**
@@ -98,11 +96,16 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
 	};
 
 	render() {
+		const width = window.innerWidth
+			|| document.documentElement.clientWidth
+			|| document.body.clientWidth;
+
+		const updatedText = width >= 692 ? "(Updated 3/4/2019)" : "";
 		return (
 			<div id="resume">
 				<div className="carousel-header flex">
 					<h2>RESUME</h2>
-                    <h3>(Updated 3/4/2019)&nbsp;&nbsp;
+                    <h3>{updatedText}&nbsp;&nbsp;
 						<a className="download-btn" href="/resume" target="_blank"><i className="fas fa-download"></i></a>
                     </h3>
 				</div>
