@@ -326,7 +326,7 @@ const Skills = ({codeMap}) => {
 						<BarChart width={600} height={300} data={orderedLangs} margin={{top: 20, right: 30, left: 20, bottom: 20}}>
 						   <CartesianGrid strokeDasharray="3 3"/>
 						   <XAxis dataKey="language" label={{value: 'Language', position: 'bottom'}} />
-						   <YAxis label={{value: 'Amount (Kilobytes)', angle: -90, position: 'insideBottomLeft'}} />
+						   <YAxis domain={[1, 'dataMax']} label={{value: 'Amount (Kilobytes)', angle: -90, position: 'insideBottomLeft'}} scale="log" />
 						   <Tooltip/>
 						   <Bar dataKey="Kilobytes" fill="#00d4d4" />
 						</BarChart>
