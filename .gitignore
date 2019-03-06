@@ -3,3 +3,4 @@ Thumbs.db
 # Useless directories
 .idea/
 www/node_modules
+www/bundle/
