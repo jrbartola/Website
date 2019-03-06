@@ -54,8 +54,8 @@ export class Portfolio extends React.Component<PortfolioProps, PortfolioState> {
                                           tooltip: "I used to love word searches when I was younger. I decided to use some functional programming concepts to write a program that solves one!",
                                           imageUrl: "../static/img/wordsearch.png",
                                           projectUrl: "https://github.com/jrbartola/Wordsearch-Solver"
-                                        },
-            ]}
+                                        }]
+		}
 
 	}
 

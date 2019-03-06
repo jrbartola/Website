@@ -108,7 +108,7 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
 						<a className="download-btn" href="/resume" target="_blank"><i className="fas fa-download"></i></a>
                     </h3>
 				</div>
-				<Accordion>
+				<Accordion accordion={false}>
 					<Experience />
 					<Education />
 					<Awards />
