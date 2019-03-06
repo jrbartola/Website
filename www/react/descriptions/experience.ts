@@ -4,11 +4,11 @@
 
 export const SCALA_WEB_DESC = "Full stack developer for the UMass College of Information and Computer Science's MS and " +
     "PhD Admissions website. The system is used annually by over 80 faculty members of the CICS department to review over 2000 applicants per year. " +
-    "I was responsible for improving relational database design patterns by rewriting old PostgreSQL schemas, addressing plugin compatibility" +
+    "Responsible for improving relational database design patterns by rewriting old PostgreSQL schemas, addressing plugin compatibility" +
     " issues on the front end by migrating from Scala.js to Typescript + React, implementing a custom sorting algorithm to rank " +
     "schools according to CS quality, and creating a cache to preserve user preferences between login sessions.";
 
-export const GOOGLE_INTERN_DESC = "Software Engineer Intern on the Site Reliability Team. I was responsible for creating a website " +
+export const GOOGLE_INTERN_DESC = "Software Engineer Intern on the Site Reliability Team. Responsible for creating a website " +
     "encompassing the functionality of a command-line tool used by Google engineers to automate dependency resolution for their code release pipeline." +
     " Authored a project design document detailing the problem statement, system requirements, UI mock-ups, user stories, test cases, " +
     "design trade-offs and future development of the new web application. On the back end, I implemented an indexing pipeline in Go " +
