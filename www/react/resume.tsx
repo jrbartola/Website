@@ -18,7 +18,6 @@ import {
 } from "./descriptions/experience";
 import {HACK_UMASS3_DESC, HACK_UMASS5_DESC, SKILLS_USA_DESC} from "./descriptions/awards";
 import {GETRequest} from "./util/http";
-import {getRepositories} from "./util/code-counter";
 
 interface ExperienceItemProps { timeFrame: string, company: string, location: string, jobTitle: string,
 	                            description: string, imageUrl?: string }
@@ -258,7 +257,7 @@ const Awards = () => {
 					<h3><i className="fas fa-medal"></i>    Awards</h3>
 				</AccordionItemTitle>
 				<AccordionItemBody>
-					<AwardItem timeFrame="Oct 2017" event="Hack UMass III" location="Amherst, MA" award="Multiple Awards"
+					<AwardItem timeFrame="Oct 2017" event="Hack UMass V" location="Amherst, MA" award="Multiple Awards"
 							   description={HACK_UMASS5_DESC} imageUrl="../static/img/hackumass-logo5.png"
 							   awardUrl="https://devpost.com/software/pharmasuitable-shf3cx" />
 					<AwardItem timeFrame="Oct 2015" event="Hack UMass III" location="Amherst, MA" award="3rd Place"
@@ -312,7 +311,6 @@ const AwardItem = (props: AwardProps) => {
  * @constructor
  */
 const Skills = ({codeMap}) => {
-	console.log(codeMap);
 	const orderedLangs: object[] = [...codeMap.entries()].sort((a, b) => a[1] > b[1] ? -1 : 1)
 		                                                 .splice(0, 8)
 		                                                 .map(([k, v]) => ({language: k, Kilobytes: v/1000}));

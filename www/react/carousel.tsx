@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Home} from "./home";
 import {Resume} from "./resume";
+import {Portfolio} from "./portfolio";
 
 
 interface CarouselProps { selectedTab: number }
@@ -47,7 +48,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
 			case 1:
 				return <Resume />;
 			case 2:
-				// return <Portfolio />;
+				return <Portfolio />;
 			case 3:
 				// return <Contact />;
 			default:
@@ -69,8 +70,8 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
 					  <div>
 						  <Home />
 					      <Resume />
+						  <Portfolio />
 					  </div>
-
 					}
 				</div>
 			</div>

@@ -4,7 +4,7 @@ interface InfoPaneProps {}
 interface InfoPaneState { facebookURL: string, githubURL: string, linkedinURL: string }
 
 /**
- * Defines the info panel on the left side of the home page
+ * Defines the info panel on the left8 side of the home page
  */
 export class InfoPane extends React.Component<InfoPaneProps, InfoPaneState> {
 	constructor(props) {
