@@ -20,7 +20,7 @@ export class Navbar extends React.Component<NavProps, NavState> {
 		const coverOffsetClass = `tab-${tabNo}`;
 
 		return (
-			<nav className="navbar navbar-expand-lg navbar-light bg-light">
+			<nav className="navbar navbar-expand-md navbar-light bg-light">
 				{/*<a className="navbar-brand" href="#">Jesse</a>*/}
 
 				<div className={`nav-item-cover ${coverOffsetClass}`}>
