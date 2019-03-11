@@ -4,3 +4,5 @@ Thumbs.db
 .idea/
 www/node_modules
 www/static/build
+# Error logs
+errors.log
