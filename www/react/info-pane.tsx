@@ -46,7 +46,11 @@ export class InfoPane extends React.Component<InfoPaneProps, InfoPaneState> {
 
 
 				<footer id="info-footer">
-					<p><i className="fas fa-map-marker-alt"></i> Amherst, MA</p>
+				    <p>
+						<a href="https://goo.gl/maps/f4DMFHdPjbtP9V6x6" target="_blank">
+						    <i className="fas fa-map-marker-alt"></i> West Orange, NJ
+						</a>
+					</p>
 					<span>© Jesse Bartola, 2019</span>
 				</footer>
 			</div>

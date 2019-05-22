@@ -306,3 +306,26 @@ a:hover {
 .portfolio-title {
   margin-bottom: 25px;
 }
+.contact-info {
+  padding: 10px 25px;
+  font-size: 1.2em;
+}
+.contact-info p {
+  margin: 10px 0;
+}
+@media (max-width: 991px) {
+  .contact-info {
+    font-size: 1em;
+  }
+}
+.email-label {
+  color: #cdcdcd;
+}
+.contact-email {
+  display: inline-block;
+  font-weight: 600;
+}
+.contact-email:hover {
+  transform: translateX(10px);
+  transition: transform 0.1s linear;
+}

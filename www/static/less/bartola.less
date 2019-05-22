@@ -324,3 +324,34 @@ nav {
 .portfolio-title {
   margin-bottom: 25px;
 }
+
+
+// Contact
+
+
+.contact-info {
+  padding: 10px 25px;
+  font-size: 1.2em;
+
+  p {
+    margin: 10px 0;
+  }
+
+  @media @small-desktop-down {
+    font-size: 1em;
+  }
+}
+
+.email-label {
+  color: darken(@medium-grey, 10%);
+}
+
+.contact-email {
+  display: inline-block;
+  font-weight: 600;
+
+  &:hover {
+    transform: translateX(10px);
+    transition: transform 0.1s linear;
+  }
+}

@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Home} from "./home";
 import {Resume} from "./resume";
 import {Portfolio} from "./portfolio";
+import {Contact} from "./contact";
 
 
 interface CarouselProps { selectedTab: number }
@@ -50,7 +51,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
 			case 2:
 				return <Portfolio />;
 			case 3:
-				// return <Contact />;
+				return <Contact />;
 			default:
 				// Shouldn't happen
 				return <div></div>;
@@ -69,8 +70,9 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
 					{ width < 692 &&
 					  <div>
 						  <Home />
-					      <Resume />
+					    <Resume />
 						  <Portfolio />
+							<Contact />
 					  </div>
 					}
 				</div>
