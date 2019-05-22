@@ -2,6 +2,11 @@
  * File containing static text data that is used in the description of experience timeline fields in the resume accordion
  */
 
+export const DEPT_ASST_DESC = "Departmental assistant within the College of Information and Computer Sciences. Assisted with the development of " + 
+    "fairkit-learn, a python-based tool used to compute and visualize fairness and quality metrics of machine learning models. Used the Bokeh library " + 
+    "for python to create an interactive visualization tool that provides information about bias in trained models. Created a pipeline to integrate " +
+    "metrics and fairness algorithms from IBM's AI Fairness 360 Toolkit into fairkit-learn."
+
 export const SCALA_WEB_DESC = "Full stack developer for the UMass College of Information and Computer Science's MS and " +
     "PhD Admissions website. The system is used annually by over 80 faculty members of the CICS department to review over 2000 applicants per year. " +
     "Responsible for improving relational database design patterns by rewriting old PostgreSQL schemas, addressing plugin compatibility" +

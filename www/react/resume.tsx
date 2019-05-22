@@ -14,7 +14,8 @@ import {
 	GOOGLE_INTERN_DESC,
 	SCALA_WEB_DESC,
 	TXTADVICE_DESC,
-	UGTA_DESC
+	UGTA_DESC,
+	DEPT_ASST_DESC
 } from "./descriptions/experience";
 import {HACK_UMASS3_DESC, HACK_UMASS5_DESC, SKILLS_USA_DESC} from "./descriptions/awards";
 import {GETRequest} from "./util/http";
@@ -99,7 +100,7 @@ export class Resume extends React.Component<ResumeProps, ResumeState> {
 			|| document.documentElement.clientWidth
 			|| document.body.clientWidth;
 
-		const updatedText = width >= 692 ? "(Updated 3/4/2019)" : "";
+		const updatedText = width >= 692 ? "(Updated 5/22/2019)" : "";
 		return (
 			<div id="resume">
 				<div className="carousel-header flex">
@@ -131,7 +132,10 @@ const Experience = () => {
 					<h3><i className="fas fa-briefcase"></i>    Work Experience</h3>
 				</AccordionItemTitle>
 				<AccordionItemBody>
-					<ExperienceItem timeFrame="Sep 2017 - Now" company="UMass Amherst" location="Amherst, MA"
+				    <ExperienceItem timeFrame="May 2019 - Now" company="UMass Amherst" location="Amherst, MA"
+									jobTitle="Departmental Assistant" description={DEPT_ASST_DESC}
+					                imageUrl="../static/img/umass-logo.png" />
+					<ExperienceItem timeFrame="Sep 2017 - March 2019" company="UMass Amherst" location="Amherst, MA"
 									jobTitle="Scala Web Developer" description={SCALA_WEB_DESC}
 					                imageUrl="../static/img/umass-logo.png" />
 					<ExperienceItem timeFrame="May 2018 - Aug 2018" company="Google" location="Cambridge, MA"
@@ -212,7 +216,7 @@ const Education = () => {
 				<AccordionItemBody>
 					<EducationItem timeFrame="Sep 2015 - May 2019" school="UMass Amherst" location="Amherst, MA"
 									major="Computer Science and Mathematics (BS)" description="umass amherst school"
-					                imageUrl="../static/img/umass-logo.png" courses={courses} gpa="3.93/4.0" />
+					                imageUrl="../static/img/umass-logo.png" courses={courses} gpa="3.94/4.0" />
 				</AccordionItemBody>
 		</AccordionItem>
 	);
