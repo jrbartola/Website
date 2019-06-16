@@ -170,12 +170,6 @@ a:hover {
   min-height: 80vh;
   overflow-y: auto;
 }
-@media (max-width: 991px) {
-  #resume {
-    max-height: 500px;
-    min-height: 500px;
-  }
-}
 @media (max-width: 767px) {
   #resume {
     max-height: initial;
