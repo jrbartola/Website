@@ -1,6 +1,7 @@
 import * as React from 'react';
+import WebpImage from '../common/WebpImage';
 
-import { AwardItem as AwardItemType } from '../types';
+import { AwardItem as AwardItemType } from '../../types';
 
 const AwardItem = (props: AwardItemType) => {
   return (
@@ -14,8 +15,13 @@ const AwardItem = (props: AwardItemType) => {
             <i className="fas fa-map-marker-alt"></i> {props.location}
           </p>
 
-          {props.imageUrl && (
-            <img className="event-logo" src={props.imageUrl} alt="Event Logo" />
+          {props.image && (
+            <WebpImage
+              className="event-logo"
+              src={props.image.webp}
+              fallback={props.image.fallback}
+              alt="Event Logo"
+            />
           )}
         </div>
         <div className="col-sm-8">

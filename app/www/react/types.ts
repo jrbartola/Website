@@ -1,7 +1,12 @@
+type ImageSource = {
+  webp?: string;
+  fallback: string;
+};
+
 export interface PortfolioCell {
   title: string;
   tooltip: string;
-  imageUrl: string;
+  image: ImageSource;
   projectUrl: string;
   description?: string;
 }
@@ -12,7 +17,7 @@ export interface ExperienceItem {
   location: string;
   jobTitle: string;
   description: string;
-  imageUrl?: string;
+  image?: ImageSource;
 }
 
 export interface EducationItem {
@@ -21,7 +26,7 @@ export interface EducationItem {
   location: string;
   major: string;
   description: string;
-  imageUrl?: string;
+  image?: ImageSource;
   gpa: string;
   courses: string[];
 }
@@ -32,6 +37,6 @@ export interface AwardItem {
   location: string;
   award: string;
   description: string;
-  imageUrl?: string;
+  image?: ImageSource;
   awardUrl?: string;
 }

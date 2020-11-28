@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Strings from '../constants/Strings';
+import WebpImage from './common/WebpImage';
 
 interface SocialIconProps {
   url: string;
@@ -10,9 +11,10 @@ const InfoPane = () => {
   return (
     <div id="info">
       <h2 className="info-header">{Strings.infoPane.name}</h2>
-      <img
+      <WebpImage
         className="info-picture bg-light"
-        src="../static/img/6522_square.png"
+        src="../static/img/6522_square.png.webp"
+        fallback="../static/img/6522_square.png"
         alt="Jesse's Portrait"
       />
 
