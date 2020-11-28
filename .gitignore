@@ -1,6 +1,5 @@
 app/www/node_modules/
 app/www/static/js
-app/www/static/sdist/
 .idea/
 database.conf
 /**/*.pyc
