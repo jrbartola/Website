@@ -1,6 +1,7 @@
 __author__ = 'Jesse Bartola'
 
 from flask import Flask, render_template, send_from_directory
+from config import configure_app
 import os
 
 app = Flask(__name__, static_folder="../www/static",
@@ -31,8 +32,15 @@ def resume():
     return send_from_directory('../www/static/img/', 'ResumeFinal.pdf')
 
 
+@app.route('/robots.txt')
+def robots_txt():
+    return send_from_directory('../www/static', 'robots.txt')
+
+
 if __name__ == "__main__":
     from waitress import serve
+
+    configure_app(app)
 
     if os.environ.get('ENVIRONMENT', 'prod') == 'dev':
         app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 3000))
