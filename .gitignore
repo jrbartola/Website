@@ -1,8 +1,6 @@
-# Image Thumbs
-Thumbs.db
-# Useless directories
+app/www/node_modules/
+app/www/static/js
 .idea/
-www/node_modules
-www/static/build
-# Error logs
-errors.log
+database.conf
+/**/*.pyc
+/**/*.env
