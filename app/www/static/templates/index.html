@@ -50,11 +50,15 @@
       <!-- React app entry point -->
   </div>
 
+  {% compress 'js' %}
+
   <!-- React app bundle  -->
   <script src="{{ url_for('static', filename='js/bundle.js') }}"></script>
 
   <!-- Vendor bundle -->
   <script src="{{ url_for('static', filename='js/vendors~main.bundle.js') }}" defer></script>
+
+  {% endcompress %}
 
 </body>
 
