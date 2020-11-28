@@ -71,7 +71,7 @@ const ResumeTab = () => {
           </a>
         </h3>
       </div>
-      <Accordion>
+      <Accordion allowMultipleExpanded={true} allowZeroExpanded={true}>
         <ResumeAccordionSection
           heading={Strings.tabs.RESUME.workExperience.heading}
           iconClass="fa-briefcase"
