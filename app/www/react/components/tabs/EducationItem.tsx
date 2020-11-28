@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { EducationItem as EducationItemType } from '../types';
+import WebpImage from '../common/WebpImage';
+import { EducationItem as EducationItemType } from '../../types';
 
 interface CourseListProps {
   courses: string[];
@@ -24,11 +25,12 @@ const EducationItem = (props: EducationItemType) => {
           <p className="edu-location">
             <i className="fas fa-map-marker-alt"></i> {props.location}
           </p>
-          {props.imageUrl && (
-            <img
+          {props.image && (
+            <WebpImage
               className="school-logo"
-              src={props.imageUrl}
-              alt="Company Logo"
+              src={props.image.webp}
+              fallback={props.image.fallback}
+              alt="School Logo"
             />
           )}
         </div>

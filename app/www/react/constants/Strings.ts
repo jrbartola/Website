@@ -56,7 +56,10 @@ const Strings = {
               'allowing customers to track and analyze events associated with Zoom, Eventbrite, GoToWebinar, and custom integrations. Responsible for ' +
               'cross-team collaboration in creating a front-end component framework to standardize the experience of settings pages ' +
               'for HubSpot-built integrations.',
-            imageUrl: '../static/img/hubspot-logo.jpg',
+            image: {
+              webp: '../static/img/hubspot-logo.jpg.webp',
+              fallback: '../static/img/hubspot-logo.jpg',
+            },
           },
           {
             timeFrame: 'July 2019 - June 2020',
@@ -67,7 +70,10 @@ const Strings = {
               'Front-end software engineer on the Integration Experience team. Responsible for creating and managing third-party app integrations within the HubSpot services platform. ' +
               'Addressed customer pain points by contributing to the implementation of integration sync errors solutions. ' +
               'Pioneered a front-end testing initiative that increased test coverage by over 100%.',
-            imageUrl: '../static/img/hubspot-logo.jpg',
+            image: {
+              webp: '../static/img/hubspot-logo.jpg.webp',
+              fallback: '../static/img/hubspot-logo.jpg',
+            },
           },
           {
             timeFrame: 'May 2019 - July 2019',
@@ -79,7 +85,10 @@ const Strings = {
               'fairkit-learn, a python-based tool used to compute and visualize fairness and quality metrics of machine learning models. Used the Bokeh library ' +
               'for python to create an interactive visualization tool that provides information about bias in trained models. Created a pipeline to integrate ' +
               "metrics and fairness algorithms from IBM's AI Fairness 360 Toolkit into fairkit-learn.",
-            imageUrl: '../static/img/umass-logo.png',
+            image: {
+              webp: '../static/img/umass-logo.png.webp',
+              fallback: '../static/img/umass-logo.png',
+            },
           },
           {
             timeFrame: 'Sep 2017 - March 2019',
@@ -92,7 +101,10 @@ const Strings = {
               'Responsible for improving relational database design patterns by rewriting old PostgreSQL schemas, addressing plugin compatibility' +
               ' issues on the front end by migrating from Scala.js to Typescript + React, implementing a custom sorting algorithm to rank ' +
               'schools according to CS quality, and creating a cache to preserve user preferences between login sessions.',
-            imageUrl: '../static/img/umass-logo.png',
+            image: {
+              webp: '../static/img/umass-logo.png.webp',
+              fallback: '../static/img/umass-logo.png',
+            },
           },
           {
             timeFrame: 'May 2018 - Aug 2018',
@@ -105,7 +117,10 @@ const Strings = {
               ' Authored a project design document detailing the problem statement, system requirements, UI mock-ups, user stories, test cases, ' +
               'design trade-offs and future development of the new web application. On the back end, I implemented an indexing pipeline in Go ' +
               'that broadcasts database updates to the webserver to keep the most recent results ready in cache.',
-            imageUrl: '../static/img/google-logo.png',
+            image: {
+              webp: '../static/img/google-logo.png.webp',
+              fallback: '../static/img/google-logo.png',
+            },
           },
           {
             timeFrame: 'May 2017 - Aug 2017',
@@ -117,7 +132,10 @@ const Strings = {
               'application designed to detect system hardware failures on-board ships in the Navy. Improved fault detecting by ~15% by formulating Bayesian Network ' +
               ' models using the Figaro probabilistic programming package for Scala. I used the new classification results to create a d3.js ' +
               'visualization to inform ship operators where faults are likely to happen.',
-            imageUrl: '../static/img/cra-logo.jpg',
+            image: {
+              webp: '../static/img/cra-logo.jpg.webp',
+              fallback: '../static/img/cra-logo.jpg',
+            },
           },
           {
             timeFrame: 'Sep 2016 - May 2018',
@@ -129,7 +147,10 @@ const Strings = {
               'undergraduates chosen to orchestrate class discussions sections and hold weekly office hours for a class of over 150 students. ' +
               'Introduced students to functional programming concepts such as immutability, higher-order functions, algebraic data types, recursive data structures ' +
               'and referential transparency.',
-            imageUrl: '../static/img/umass-logo.png',
+            image: {
+              webp: '../static/img/umass-logo.png.webp',
+              fallback: '../static/img/umass-logo.png',
+            },
           },
           {
             timeFrame: 'May 2015 - Nov 2015',
@@ -141,7 +162,10 @@ const Strings = {
               'advice from professional stylists (featured on CNN!). I built a RESTful API using Flask + PostgreSQL, and implemented the messaging ' +
               'interface using React.js. A bit further down the line, I was able to write Postgres queries to analyse usage statistics to better ' +
               'inform stylists of the clothing preferences for a given user.',
-            imageUrl: '../static/img/txtadvice-logo.png',
+            image: {
+              webp: '../static/img/txtadvice-logo.png.webp',
+              fallback: '../static/img/txtadvice-logo.png',
+            },
           },
         ],
       },
@@ -154,7 +178,10 @@ const Strings = {
             location: 'Amherst, MA',
             major: 'Computer Science and Mathematics (BS)',
             description: 'umass amherst school',
-            imageUrl: '../static/img/umass-logo.png',
+            image: {
+              webp: '../static/img/umass-logo.png.webp',
+              fallback: '../static/img/umass-logo.png',
+            },
             courses: [
               'Software Engineering',
               'Digital Forensics',
@@ -186,7 +213,10 @@ const Strings = {
               'web application that assists the elderly by maintaining a record of medication history. The website is hooked up to a "smart" ' +
               'pill box, which uses Arduino sensors to automatically keep track of which medications need to be taken throughout the week. This project ' +
               'won "Most Creative Health Hack", "Best Website/Web App", "Best Amazon Lex Hack", and the "Lutron Sponsored Challenge".',
-            imageUrl: '../static/img/hackumass-logo5.png',
+            image: {
+              webp: '../static/img/hackumass-logo5.png.webp',
+              fallback: '../static/img/hackumass-logo5.png',
+            },
             awardUrl: 'https://devpost.com/software/pharmasuitable-shf3cx',
           },
           {
@@ -199,7 +229,10 @@ const Strings = {
               'monitor multiple sclerosis symptoms in patients. Integrated raw Arduino data from servo motors, heartbeat sensors, ' +
               'perspiration monitors and motion sensors to provide real-time symptom feedback to patients using the application. ' +
               'Our team won third place overall out of roughly 50 teams and over 500 contestants from all over the country.',
-            imageUrl: '../static/img/hackumass-logo.png',
+            image: {
+              webp: '../static/img/hackumass-logo.png.webp',
+              fallback: '../static/img/hackumass-logo.png',
+            },
             awardUrl: 'https://devpost.com/software/scopium',
           },
           {
@@ -211,7 +244,10 @@ const Strings = {
               'Competed in the 2015 SkillsUSA New Jersey state championships for Java programming. Each contestant was ' +
               'instructed to create a Java applet satisfying certain user stories and performance criteria. I achieved second place out ' +
               'of over 200 contestants from New Jersey.',
-            imageUrl: '../static/img/skillsusa-logo.jpeg',
+            image: {
+              webp: '../static/img/skillsusa-logo.jpeg.webp',
+              fallback: '../static/img/skillsusa-logo.jpeg',
+            },
           },
         ],
       },
@@ -226,56 +262,80 @@ const Strings = {
           title: 'Crypto Backtester',
           tooltip:
             'An open-source cryptocurrency backtesting UI for Coinbase Pro',
-          imageUrl: '../static/img/backtester.png',
+          image: {
+            webp: '../static/img/backtester.png.webp',
+            fallback: '../static/img/backtester.png',
+          },
           projectUrl: 'https://github.com/jrbartola/CryptoBacktester',
         },
         {
           title: 'Crypto-Signal',
           tooltip:
             'An open-source cryptocurrency notification & analysis system',
-          imageUrl: '../static/img/cryptosignal.png',
+          image: {
+            webp: '../static/img/cryptosignal.png.webp',
+            fallback: '../static/img/cryptosignal.png',
+          },
           projectUrl: 'https://github.com/CryptoSignal/crypto-signal',
         },
         {
           title: 'Pharmasuitable',
           tooltip:
             'A pharmaceutical health monitoring dashboard for medication magement. Created at Hack UMass V',
-          imageUrl: '../static/img/pharmasuitable.png',
+          image: {
+            webp: '../static/img/pharmasuitable.png.webp',
+            fallback: '../static/img/pharmasuitable.png',
+          },
           projectUrl: 'https://devpost.com/software/pharmasuitable-shf3cx',
         },
         {
           title: 'Medicus',
           tooltip:
             'A medical iOS application designed to use image recognition to diagnose various skill ailments. Created at Hack UMass IV',
-          imageUrl: '../static/img/medicus-iphones.png',
+          image: {
+            webp: '../static/img/medicus-iphones.png.webp',
+            fallback: '../static/img/medicus-iphones.png',
+          },
           projectUrl: 'https://devpost.com/software/medicus',
         },
         {
           title: 'Scopium',
           tooltip:
             'A mobile health application that uses Arduino sensors to monitor multiple sclerosis symptoms in patients. Created at Hack UMass III',
-          imageUrl: '../static/img/scopium-iphone.png',
+          image: {
+            webp: '../static/img/scopium-iphone.png.webp',
+            fallback: '../static/img/scopium-iphone.png',
+          },
           projectUrl: 'https://devpost.com/software/scopium',
         },
         {
           title: 'Wave Calendar',
           tooltip:
             "Don't have anything to do this weekend? Use Wave Calendar, a web application designed to help find parties in your area!",
-          imageUrl: '../static/img/wavecalendar.jpg',
+          image: {
+            webp: '../static/img/wavecalendar.jpg.webp',
+            fallback: '../static/img/wavecalendar.jpg',
+          },
           projectUrl: 'https://github.com/jrbartola/WaveCalendar',
         },
         {
           title: 'Boggle Solver',
           tooltip:
             'Ever wondered what it would look like to find every possible word in a game of Boggle? Think no more!',
-          imageUrl: '../static/img/boggle.jpg',
+          image: {
+            webp: '../static/img/boggle.jpg.webp',
+            fallback: '../static/img/boggle.jpg',
+          },
           projectUrl: 'https://github.com/jrbartola/BoggleSolver',
         },
         {
           title: 'Word Search Solver',
           tooltip:
             'I used to love word searches when I was younger. I decided to use some functional programming concepts to write a program that solves one!',
-          imageUrl: '../static/img/wordsearch.png',
+          image: {
+            webp: '../static/img/wordsearch.png.webp',
+            fallback: '../static/img/wordsearch.png',
+          },
           projectUrl: 'https://github.com/jrbartola/Wordsearch-Solver',
         },
       ],

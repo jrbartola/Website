@@ -1,11 +1,21 @@
 import * as React from 'react';
+import loadable from '@loadable/component';
 
-import HomeTab from '../tabs/HomeTab';
-import ResumeTab from '../tabs/ResumeTab';
-import PortfolioTab from '../tabs/PortfolioTab';
-import ContactTab from '../tabs/ContactTab';
 import { getWindowWidth } from '../util/windowUtils';
 import CarouselTabs from '../constants/CarouselTabs';
+
+const HomeTab = loadable(
+  () => import(/* webpackChunkName: "HomeTab" */ './tabs/HomeTab')
+);
+const ResumeTab = loadable(
+  () => import(/* webpackChunkName: "ResumeTab" */ './tabs/ResumeTab')
+);
+const PortfolioTab = loadable(
+  () => import(/* webpackChunkName: "PortfolioTab" */ './tabs/PortfolioTab')
+);
+const ContactTab = loadable(
+  () => import(/* webpackChunkName: "ContactTab" */ './tabs/ContactTab')
+);
 
 interface CarouselProps {
   selectedTab: CarouselTabs;

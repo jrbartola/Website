@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { ExperienceItem } from '../types';
+import WebpImage from '../common/WebpImage';
+import { ExperienceItem } from '../../types';
 
 const ExperienceItem = (props: ExperienceItem) => {
   return (
@@ -11,10 +12,11 @@ const ExperienceItem = (props: ExperienceItem) => {
           <p className="job-location">
             <i className="fas fa-map-marker-alt"></i> {props.location}
           </p>
-          {props.imageUrl && (
-            <img
+          {props.image && (
+            <WebpImage
               className="company-logo"
-              src={props.imageUrl}
+              src={props.image.webp}
+              fallback={props.image.fallback}
               alt="Company Logo"
             />
           )}

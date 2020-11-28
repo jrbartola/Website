@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Strings from '../constants/Strings';
-import { PortfolioCell } from '../types';
+import Strings from '../../constants/Strings';
+import { PortfolioCell } from '../../types';
 import PortfolioRow from './PortfolioRow';
 
 const makePortfolioCellPairs = (portfolioCells: PortfolioCell[]) => {

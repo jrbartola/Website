@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Accordion } from 'react-accessible-accordion';
 import 'react-accessible-accordion/dist/fancy-example.css';
 
-import Strings from '../constants/Strings';
+import Strings from '../../constants/Strings';
 import {
   ExperienceItem as ExperienceItemType,
   EducationItem as EducationItemType,
   AwardItem as AwardItemType,
-} from '../types';
-import GithubAPI from '../util/GithubAPI';
-import { getWindowWidth } from '../util/windowUtils';
+} from '../../types';
+import GithubAPI from '../../util/GithubAPI';
+import { getWindowWidth } from '../../util/windowUtils';
 import AwardItem from './AwardItem';
 import EducationItem from './EducationItem';
 import ExperienceItem from './ExperienceItem';

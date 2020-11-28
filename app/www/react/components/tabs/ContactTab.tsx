@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Strings from '../constants/Strings';
+import Strings from '../../constants/Strings';
 
 const ContactTab = () => {
   return (
