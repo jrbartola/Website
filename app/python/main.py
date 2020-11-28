@@ -1,11 +1,14 @@
 __author__ = 'Jesse Bartola'
 
 from flask import Flask, render_template, send_from_directory
+from flask_static_compress import FlaskStaticCompress
 from config import configure_app
 import os
 
 app = Flask(__name__, static_folder="../www/static",
             template_folder="../www/static/templates")
+
+compress = FlaskStaticCompress(app)
 
 
 if app.debug is not True:
