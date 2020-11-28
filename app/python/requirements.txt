@@ -3,4 +3,3 @@ pyOpenSSL==19.1.0
 waitress==1.4.4
 colorlog==4.2.1
 flask-talisman==0.7.0
-Flask-Static-Compress==1.0.3
