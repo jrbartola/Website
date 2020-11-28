@@ -12,7 +12,9 @@ const PortfolioRow = ({ leftCell, rightCell }: PortfolioRowProps) => {
       <div className="col-md-6 portfolio-left">
         <div
           className="portfolio-cell-outer"
-          style={{ backgroundImage: `url("${leftCell.image.webp}")` }}
+          style={{
+            backgroundImage: `url("${leftCell.image.webp}"), url("${leftCell.image.fallback}")`,
+          }}
         >
           <div className="portfolio-cell">
             <a href={leftCell.projectUrl} target="_blank">
@@ -26,7 +28,9 @@ const PortfolioRow = ({ leftCell, rightCell }: PortfolioRowProps) => {
         {rightCell !== undefined && (
           <div
             className="portfolio-cell-outer"
-            style={{ backgroundImage: `url("${rightCell.image.webp}")` }}
+            style={{
+              backgroundImage: `url("${rightCell.image.webp}"), url("${rightCell.image.fallback}")`,
+            }}
           >
             <div className="portfolio-cell">
               <a href={rightCell.projectUrl} target="_blank">
