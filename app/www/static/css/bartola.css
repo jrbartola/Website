@@ -1,0 +1,323 @@
+/** Defines the main styles for the website **/
+/** Reset CSS Styles. These will be the default styles for the specified HTML elements **/
+* {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+  background-color: #333;
+}
+li {
+  list-style: none;
+}
+p {
+  margin-bottom: 0;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+/** Define global variables and classes for the entire site **/
+.flex {
+  display: flex;
+}
+@media (max-width: 767px) {
+  nav {
+    display: none !important;
+  }
+}
+.navbar {
+  height: 120px;
+}
+.navbar-collapse {
+  justify-content: space-around;
+}
+.nav-item {
+  width: 20%;
+  z-index: 10;
+  border-radius: 50%;
+  text-align: center;
+}
+.nav-item:hover {
+  cursor: pointer;
+}
+.nav-item-cover {
+  z-index: 1;
+  background-color: #E6E6E6;
+  height: 130px;
+  width: 25vw;
+  position: absolute;
+  transition: all 0.5s;
+}
+@media (max-width: 767px) {
+  .nav-item-cover {
+    display: none;
+  }
+}
+.tab-HOME {
+  left: 2vw;
+}
+.tab-RESUME {
+  left: 25.2vw;
+}
+.tab-PORTFOLIO {
+  left: 48.3vw;
+}
+.tab-CONTACT {
+  left: 71vw;
+}
+.nav-icon {
+  font-size: 2.2rem;
+}
+.nav-link {
+  font-weight: 800;
+}
+.divider {
+  width: 2px;
+  height: 90px;
+  border-left: solid 1px #e6e6e6;
+}
+#info {
+  color: #E6E6E6;
+  text-align: center;
+  background-color: #555C70;
+  padding: 30px;
+}
+.info-header {
+  font-weight: 800;
+}
+.info-picture {
+  padding: 10px;
+  width: 70%;
+  height: auto;
+}
+#traits {
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+.social-icons {
+  margin-top: 20px;
+  justify-content: center;
+  font-size: 2em;
+  list-style: none;
+}
+@media (max-width: 991px) {
+  .social-icons {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 767px) {
+  .social-icons {
+    font-size: 2em;
+  }
+}
+.social-icon {
+  flex-basis: 15%;
+}
+.social-icon a {
+  position: relative;
+  bottom: 0;
+  color: #e6e6e6;
+}
+.social-icon a:hover {
+  color: #fff;
+  bottom: 5px;
+  transition: all 0.3s;
+}
+@media (max-width: 991px) {
+  .social-icon {
+    flex-basis: 25%;
+  }
+}
+#info-footer {
+  margin-top: 25px;
+}
+.content-carousel {
+  padding-left: 0;
+}
+#carousel {
+  width: 100%;
+  margin-right: 15px;
+  background-color: white;
+}
+.carousel-header {
+  justify-content: space-between;
+  padding: 20px 30px;
+  color: white;
+  background-color: #00bdbd;
+}
+.carousel-header h2 {
+  font-weight: 800;
+}
+@media (max-width: 767px) {
+  .carousel-container {
+    margin-left: 15px;
+  }
+}
+.bio {
+  padding: 10px 25px;
+  font-size: 1.2em;
+}
+@media (max-width: 991px) {
+  .bio {
+    font-size: 1em;
+  }
+}
+#resume {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+@media (max-width: 767px) {
+  #resume {
+    max-height: initial;
+    min-height: initial;
+    overflow-y: initial;
+  }
+}
+.experience-item,
+.edu-item,
+.award-item {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #E6E6E6;
+}
+.job-info,
+.edu-info,
+.award-info {
+  text-align: center;
+}
+.job-timeframe,
+.edu-timeframe,
+.award-timeframe {
+  color: #e0e0e0;
+}
+.job-company,
+.edu-school {
+  color: #333;
+}
+.job-location,
+.edu-location,
+.award-location {
+  margin-bottom: 20px;
+  color: #333;
+}
+.company-logo,
+.school-logo,
+.event-logo {
+  height: 150px;
+  width: 150px;
+}
+@media (max-width: 991px) {
+  .company-logo,
+  .school-logo,
+  .event-logo {
+    margin-bottom: 30px;
+  }
+}
+.job-title::after .award-title::after,
+.edu-title::after {
+  content: ' ';
+  display: block;
+  width: 40px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border-bottom: 5px solid #00bdbd;
+}
+.edu-gpa {
+  font-style: italic;
+}
+.download-btn {
+  position: relative;
+  bottom: 0;
+}
+.download-btn:hover {
+  color: #fff;
+  bottom: 5px;
+  transition: all 0.3s;
+}
+.course-list {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.course-list li::before {
+  margin-right: 10px;
+  color: #00d4d4;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 700;
+  content: '\f058';
+}
+.code-progress {
+  border-radius: 7px;
+  background-color: #00d4d4;
+}
+#portfolio {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+@media (max-width: 767px) {
+  #portfolio {
+    max-height: initial;
+    min-height: initial;
+    overflow-y: initial;
+  }
+}
+.portfolio-left {
+  padding-right: 0;
+}
+@media (max-width: 991px) {
+  .portfolio-left {
+    padding-right: 15px;
+  }
+}
+.portfolio-right {
+  padding-left: 0;
+}
+@media (max-width: 991px) {
+  .portfolio-right {
+    padding-left: 15px;
+  }
+}
+.portfolio-cell-outer {
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  height: 300px;
+}
+.portfolio-cell {
+  height: 100%;
+  padding: 15%;
+  opacity: 0;
+  background-color: #e6e6e6;
+}
+.portfolio-cell:hover {
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+.portfolio-title {
+  margin-bottom: 25px;
+}
+.contact-info {
+  padding: 10px 25px;
+  font-size: 1.2em;
+}
+.contact-info p {
+  margin: 10px 0;
+}
+@media (max-width: 991px) {
+  .contact-info {
+    font-size: 1em;
+  }
+}
+.email-label {
+  color: #cdcdcd;
+}
+.contact-email {
+  display: inline-block;
+  font-weight: 600;
+}
+.contact-email:hover {
+  transform: translateX(10px);
+  transition: transform 0.1s linear;
+}
