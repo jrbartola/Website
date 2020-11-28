@@ -10,7 +10,7 @@ interface WebpImageProps {
 const WebpImage = ({ src, fallback, ...extra }: WebpImageProps) => {
   return (
     <picture>
-      <source srcSet={src} type="image/webp" {...extra} />
+      <source srcSet={src} type="image/webp" />
       <img src={fallback} {...extra} />
     </picture>
   );
