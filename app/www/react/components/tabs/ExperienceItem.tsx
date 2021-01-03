@@ -17,7 +17,9 @@ const ExperienceItem = (props: ExperienceItem) => {
               className="company-logo"
               src={props.image.webp}
               fallback={props.image.fallback}
-              alt="Company Logo"
+              alt={`${props.company} logo`}
+              width={150}
+              height={150}
             />
           )}
         </div>

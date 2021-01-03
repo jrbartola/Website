@@ -20,7 +20,9 @@ const AwardItem = (props: AwardItemType) => {
               className="event-logo"
               src={props.image.webp}
               fallback={props.image.fallback}
-              alt="Event Logo"
+              alt={`${props.event} logo`}
+              width={150}
+              height={150}
             />
           )}
         </div>

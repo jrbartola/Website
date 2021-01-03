@@ -1,7 +1,7 @@
 /** Defines the main styles for the website **/
 /** Reset CSS Styles. These will be the default styles for the specified HTML elements **/
 * {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 body {
   background-color: #333;

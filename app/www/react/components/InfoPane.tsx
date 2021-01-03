@@ -16,6 +16,8 @@ const InfoPane = () => {
         src="../static/img/6522_square.png.webp"
         fallback="../static/img/6522_square.png"
         alt="Jesse's Portrait"
+        height={250}
+        width={250}
       />
 
       <h6 id="traits">{Strings.infoPane.traits}</h6>

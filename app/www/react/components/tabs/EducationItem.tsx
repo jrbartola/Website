@@ -30,7 +30,9 @@ const EducationItem = (props: EducationItemType) => {
               className="school-logo"
               src={props.image.webp}
               fallback={props.image.fallback}
-              alt="School Logo"
+              alt={`${props.school} logo`}
+              width={150}
+              height={150}
             />
           )}
         </div>
