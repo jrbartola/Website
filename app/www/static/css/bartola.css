@@ -43,6 +43,9 @@ a:hover {
 .nav-item:hover {
   cursor: pointer;
 }
+.nav-item:focus {
+  outline: none;
+}
 .nav-item-cover {
   z-index: 1;
   background-color: #E6E6E6;
