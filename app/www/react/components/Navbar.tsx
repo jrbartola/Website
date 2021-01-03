@@ -11,6 +11,7 @@ interface NavItemProps {
   iconClass: string;
   selected: boolean;
   onClick: () => void;
+  tabIndex?: number;
 }
 
 const NavItemTabProps = {
@@ -37,9 +38,10 @@ const Navbar = ({ selectedTab, onTabClick }: NavProps) => {
 
       <div className="collapse navbar-collapse">
         <div className="divider" />
-        {Object.keys(NavItemTabProps).map((tabName) => (
+        {Object.keys(NavItemTabProps).map((tabName, i) => (
           <React.Fragment key={tabName}>
             <NavItem
+              tabIndex={0}
               selected={selectedTab === tabName}
               onClick={() => onTabClick(tabName as CarouselTabs)}
               caption={tabName}
@@ -53,10 +55,22 @@ const Navbar = ({ selectedTab, onTabClick }: NavProps) => {
   );
 };
 
-const NavItem = ({ selected, onClick, iconClass, caption }: NavItemProps) => {
+const NavItem = ({
+  selected,
+  onClick,
+  iconClass,
+  caption,
+  tabIndex,
+}: NavItemProps) => {
   const selectedClass = selected ? 'selected' : '';
   return (
-    <div className={`nav-item flex-column ${selectedClass}`} onClick={onClick}>
+    <div
+      className={`nav-item flex-column ${selectedClass}`}
+      role="button"
+      aria-label={caption}
+      onClick={onClick}
+      tabIndex={tabIndex}
+    >
       <i className={`fas ${iconClass} nav-icon`}></i>
       <span className="nav-link">{caption}</span>
     </div>
