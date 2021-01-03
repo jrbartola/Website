@@ -1,14 +1,21 @@
 from flask_talisman import Talisman
+from flask_compress import Compress
 
 
 def configure_app(app):
     configure_https(app)
     configure_headers(app)
+    configure_compression(app)
 
 
 def configure_headers(app):
     # Set static file cache to 1 year
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000
+
+
+def configure_compression(app):
+    compress = Compress()
+    compress.init_app(app)
 
 
 def configure_https(app):
