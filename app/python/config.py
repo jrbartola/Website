@@ -3,6 +3,12 @@ from flask_talisman import Talisman
 
 def configure_app(app):
     configure_https(app)
+    configure_headers(app)
+
+
+def configure_headers(app):
+    # Set static file cache to 1 year
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000
 
 
 def configure_https(app):
