@@ -10,14 +10,17 @@ const Strings = {
     copyright: '© Jesse Bartola, 2020',
     socialIcons: [
       {
+        alt: 'LinkedIn',
         url: 'https://www.linkedin.com/in/jessebartola/',
         iconClass: 'fab fa-linkedin',
       },
       {
+        alt: 'Github',
         url: 'https://github.com/jrbartola/',
         iconClass: 'fab fa-github',
       },
       {
+        alt: 'Facebook',
         url: 'https://www.facebook.com/jbartola',
         iconClass: 'fab fa-facebook',
       },

@@ -17,7 +17,7 @@ const PortfolioRow = ({ leftCell, rightCell }: PortfolioRowProps) => {
           }}
         >
           <div className="portfolio-cell">
-            <a href={leftCell.projectUrl} target="_blank">
+            <a href={leftCell.projectUrl} target="_blank" rel="noopener">
               <h3 className="portfolio-title">{leftCell.title}</h3>
               <p>{leftCell.tooltip}</p>
             </a>
@@ -33,7 +33,7 @@ const PortfolioRow = ({ leftCell, rightCell }: PortfolioRowProps) => {
             }}
           >
             <div className="portfolio-cell">
-              <a href={rightCell.projectUrl} target="_blank">
+              <a href={rightCell.projectUrl} target="_blank" rel="noopener">
                 <h3 className="portfolio-title">{rightCell.title}</h3>
                 <p>{rightCell.tooltip}</p>
               </a>

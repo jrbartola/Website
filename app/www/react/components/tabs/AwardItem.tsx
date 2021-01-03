@@ -28,7 +28,7 @@ const AwardItem = (props: AwardItemType) => {
         </div>
         <div className="col-sm-8">
           {props.awardUrl && (
-            <a href={props.awardUrl} target="_blank">
+            <a href={props.awardUrl} target="_blank" rel="noopener">
               <h4 className="award-title">
                 {props.award} <i className="fas fa-link"></i>
               </h4>

@@ -66,7 +66,12 @@ const ResumeTab = () => {
         <h2>{Strings.tabs.RESUME.heading}</h2>
         <h3>
           {updatedText}&nbsp;&nbsp;
-          <a className="download-btn" href="/resume" target="_blank">
+          <a
+            className="download-btn"
+            href="/resume"
+            target="_blank"
+            aria-label="Jesse's resume"
+          >
             <i className="fas fa-download"></i>
           </a>
         </h3>

@@ -7,7 +7,7 @@ import CarouselTabs from '../constants/CarouselTabs';
 
 const Container = () => {
   const [selectedTab, setSelectedTab] = React.useState<CarouselTabs>(
-    CarouselTabs.HOME
+    CarouselTabs.RESUME
   );
 
   return (
