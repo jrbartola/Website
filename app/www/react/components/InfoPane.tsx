@@ -14,8 +14,8 @@ const InfoPane = () => {
       <h1 className="info-header">{Strings.infoPane.name}</h1>
       <WebpImage
         className="info-picture bg-light"
-        src="../static/img/6522_square.png.webp"
-        fallback="../static/img/6522_square.png"
+        src="../static/img/profile_square.jpeg.webp"
+        fallback="../static/img/profile_square.jpeg"
         alt="Jesse's Portrait"
         height={250}
         width={250}
