@@ -7,7 +7,7 @@ const Strings = {
     name: 'JESSE BARTOLA',
     traits: 'software engineer, math lover, finance enthusiast',
     location: 'Cambridge, MA',
-    copyright: '© Jesse Bartola, 2020',
+    copyright: '© Jesse Bartola, 2023',
     socialIcons: [
       {
         alt: 'LinkedIn',
