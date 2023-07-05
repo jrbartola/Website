@@ -1,5 +1,5 @@
 # STAGE 1) Compile the React files in the build stage
-FROM node as build-stage
+FROM node:16 as build-stage
 
 WORKDIR /app/www
 
