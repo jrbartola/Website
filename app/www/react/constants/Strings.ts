@@ -30,14 +30,14 @@ const Strings = {
     HOME: {
       heading: 'ABOUT ME',
       bio: [
-        "I'm a Software Engineer, recently receiving my undergraduate degree in " +
+        "I'm a Software Engineer, receiving my undergraduate degree in " +
           'Computer Science and Mathematics from UMass Amherst in May 2019. I ' +
-          'have roughly 8 years of programming experience under my belt coupled ' +
+          'have roughly 11 years of programming experience under my belt coupled ' +
           'with a lifelong interest in computers and technology.',
         'My work experience consists of web and mobile software projects ' +
           'including scalable social networking platforms, automated texting ' +
-          'services and mobile iOS applications. I currently work at HubSpot as a Senior Software Engineer.',
-        "When I'm not programming I enjoy biking, playing piano, reading, and investing.",
+          'services and mobile iOS applications. I currently work at HubSpot as a Technical Lead.',
+        "When I'm not programming I enjoy biking, playing piano, reading, learning languages, and investing.",
       ],
     },
     CONTACT: {
@@ -45,17 +45,32 @@ const Strings = {
     },
     RESUME: {
       heading: 'RESUME',
-      lastUpdated: '(Updated 11/27/2020)',
+      lastUpdated: '(Updated 7/5/2023)',
       workExperience: {
         heading: 'Work Experience',
         items: [
+          {
+            timeFrame: 'April 2021 - Now',
+            company: 'HubSpot',
+            location: 'Cambridge, MA',
+            jobTitle: 'Technical Lead I',
+            description:
+              'Technical Lead of the Automation Triggers FE team. Lead a team of 3 engineers in redefining the way workflows ' +
+              'are triggered using event-based data. Thought leader and main contributor to the FlowDoctor project, giving customers ' +
+              'precise insight into the historical causes and prevention of object workflow enrollments.' +
+              'Previously, was Tech Lead for the Integrations Experience and App Lifecycle FE teams.',
+            image: {
+              webp: '../static/img/hubspot-logo.jpg.webp',
+              fallback: '../static/img/hubspot-logo.jpg',
+            },
+          },
           {
             timeFrame: 'June 2020 - Now',
             company: 'HubSpot',
             location: 'Cambridge, MA',
             jobTitle: 'Senior Software Engineer I',
             description:
-              'Senior Software Engineer Integration Experience team. Was the DRI for creating a Marketing Event CRM Object, ' +
+              'Senior Software Engineer on the Integration Experience team. Was the DRI for creating a Marketing Event CRM Object, ' +
               'allowing customers to track and analyze events associated with Zoom, Eventbrite, GoToWebinar, and custom integrations. Responsible for ' +
               'cross-team collaboration in creating a front-end component framework to standardize the experience of settings pages ' +
               'for HubSpot-built integrations.',
