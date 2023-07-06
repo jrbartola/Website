@@ -34,7 +34,7 @@ def configure_https(app):
             '\'self\'',
             'www.googletagmanager.com',
             '*.google-analytics.com',
-            '\'sha256-9SVeMjGdU9ISJUJKM5uwtoDP31cKS+0c9sE/d6WYeEc=\''
+            '\'sha256-/o6muhHutEQHD9ow34fITBxCTImfJQnXVUnIpg9Cpgw='
         ],
         'img-src': [
             '\'self\'',
